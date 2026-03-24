@@ -3,396 +3,352 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Тело говорит первым — 21 сигнал за 3–5 лет до болезни</title>
-<meta name="description" content="21 сигнал, который тело посылает за 3–5 лет до диагноза. Электронная книга с конкретными анализами и специалистами.">
+<title>Тело говорит первым — Архитектура Сознания</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+:root{--bg:#FDFCFA;--warm:#F6F1EB;--card:#FFFFFF;--ink:#1B1B18;--ink2:#3D3D37;--ink3:#6B6B62;--ink4:#9E9E94;--red:#C4463A;--red-soft:#E8675C;--red-bg:rgba(196,70,58,0.06);--sage:#6B8F71;--sage-bg:rgba(107,143,113,0.08);--line:rgba(27,27,24,0.08)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#e8e8e8;color:#1a1a1a;line-height:1.8;font-size:17px}
-.page{max-width:720px;margin:0 auto;background:#fff;padding:48px 40px;min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,0.08)}
-@media(max-width:768px){.page{padding:32px 20px}body{font-size:16px}}
+html{scroll-behavior:smooth}
+body{font-family:'Lora',Georgia,serif;background:var(--bg);color:var(--ink2);line-height:1.85;font-size:18px;-webkit-font-smoothing:antialiased}
+::selection{background:var(--red);color:#fff}
 
-h1{font-size:2.4em;font-weight:800;color:#c0392b;line-height:1.2;margin-bottom:16px}
-h2{font-size:1.8em;font-weight:800;color:#1a1a1a;line-height:1.3;margin-bottom:16px;margin-top:8px}
-h3{font-size:1.3em;font-weight:700;margin-bottom:12px;margin-top:4px}
-p{margin-bottom:16px}
-strong{font-weight:700}
+.col{max-width:680px;margin:0 auto;padding:0 24px}
+@media(max-width:600px){body{font-size:16px}.col{padding:0 18px}}
+
+/* ===== TYPOGRAPHY ===== */
+h1,h2,h3{font-family:'Lora',serif;color:var(--ink);font-weight:600;letter-spacing:-.01em}
+p{margin-bottom:20px}
+strong{font-weight:600;color:var(--ink)}
 em{font-style:italic}
+a{color:var(--red);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(196,70,58,0.3);transition:text-decoration-color .3s}
+a:hover{text-decoration-color:var(--red)}
 
-.divider{border:none;border-top:2px dashed #c0392b;margin:40px 0;opacity:0.5}
+/* ===== NAV ===== */
+nav{padding:16px 0;border-bottom:1px solid var(--line);margin-bottom:0;position:sticky;top:0;background:rgba(253,252,250,0.92);backdrop-filter:blur(16px);z-index:100}
+nav .col{display:flex;justify-content:space-between;align-items:center}
+.nav-left{font-family:'Manrope',sans-serif;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+.nav-cta{font-family:'Manrope',sans-serif;font-size:.7rem;padding:10px 24px;background:var(--ink);color:var(--bg);border:none;cursor:pointer;letter-spacing:.08em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:all .3s}
+.nav-cta:hover{background:var(--red);color:#fff;text-decoration:none}
 
-.subtitle{font-size:1.3em;font-weight:700;color:#1a1a1a;line-height:1.4;margin-bottom:12px}
-.subtext{font-weight:600;color:#333;margin-bottom:20px}
+/* ===== HEADER ===== */
+.header{padding:80px 0 60px;border-bottom:1px solid var(--line)}
+.header-cat{font-family:'Manrope',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:20px;display:inline-block}
+.header h1{font-size:clamp(2.4rem,6vw,3.6rem);line-height:1.15;margin-bottom:20px;font-weight:700;max-width:580px}
+.header-deck{font-size:1.15rem;color:var(--ink3);font-style:italic;max-width:520px;line-height:1.7;margin-bottom:24px}
+.header-meta{font-family:'Manrope',sans-serif;font-size:.72rem;color:var(--ink4);display:flex;gap:20px;flex-wrap:wrap}
+.header-meta span{display:flex;align-items:center;gap:6px}
 
-/* Checklist */
-.checklist{list-style:none;margin:20px 0 24px;padding:0}
-.checklist li{padding:6px 0;padding-left:28px;position:relative;font-size:1em;line-height:1.7}
-.checklist li::before{content:'☐';position:absolute;left:0;color:#999;font-size:1.1em}
+/* ===== ARTICLE BODY ===== */
+article{padding:48px 0}
+article p{font-size:1.05rem}
+article h2{font-size:1.7rem;margin:48px 0 16px;line-height:1.3}
+article h3{font-size:1.25rem;margin:36px 0 12px}
 
-/* Green checklist */
-.greenlist{list-style:none;margin:20px 0 24px;padding:0}
-.greenlist li{padding:8px 0;padding-left:32px;position:relative;font-size:1em;line-height:1.7}
-.greenlist li::before{content:'✅';position:absolute;left:0;font-size:1em}
+/* ===== DROP CAP ===== */
+.drop-cap::first-letter{float:left;font-size:3.8rem;line-height:.8;padding:4px 10px 0 0;color:var(--red);font-weight:700}
 
-/* Red dot list */
-.redlist{list-style:none;margin:20px 0 24px;padding:0}
-.redlist li{padding:10px 0;padding-left:8px;border-bottom:1px solid #f0f0f0;font-size:1em;line-height:1.6}
-.redlist li strong{font-weight:700}
-.redlist li span.hint{color:#666;font-weight:400}
+/* ===== PULLQUOTE ===== */
+.pullquote{margin:40px 0;padding:28px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);font-size:1.5rem;line-height:1.4;font-weight:600;color:var(--ink);font-style:italic}
 
-/* Section list with emoji */
-.emolist{list-style:none;margin:16px 0 20px;padding:0}
-.emolist li{padding:6px 0;padding-left:32px;position:relative;line-height:1.7}
-.emolist li .emo{position:absolute;left:0}
+/* ===== SIDEBAR BOX ===== */
+.sidebar{margin:36px 0;padding:28px 32px;background:var(--warm);border-left:3px solid var(--red)}
+.sidebar p{margin-bottom:8px;font-size:.95rem;color:var(--ink2)}
+.sidebar p:last-child{margin-bottom:0}
+.sidebar strong{color:var(--ink)}
 
-/* Quiz interactive */
-#quiz{margin:16px 0 8px}
-.quiz-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;margin-bottom:6px;border-radius:8px;cursor:pointer;transition:all .2s;border:2px solid #f0f0f0;user-select:none}
-.quiz-item:hover{border-color:#ddd;background:#fafafa}
-.quiz-item.checked{border-color:#c0392b;background:#fdf0ee}
-.quiz-item input{display:none}
-.qbox{width:24px;height:24px;border-radius:6px;border:2px solid #ccc;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;margin-top:1px;font-size:14px}
-.quiz-item.checked .qbox{background:#c0392b;border-color:#c0392b;color:#fff}
-.quiz-item.checked .qbox::after{content:'✓';color:#fff;font-weight:700}
-.qtxt{font-size:.95em;line-height:1.5;color:#333}
-.quiz-item.checked .qtxt{color:#1a1a1a;font-weight:500}
+/* ===== TABLE ===== */
+.data-table{width:100%;margin:32px 0;border-collapse:collapse;font-size:.95rem}
+.data-table th{text-align:left;padding:12px 16px;background:var(--ink);color:var(--bg);font-family:'Manrope',sans-serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.data-table td{padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6}
+.data-table tr:last-child td{border-bottom:none}
+.data-table td:first-child{color:var(--ink3);font-style:italic;width:40%}
+.data-table td:last-child{color:var(--ink);font-weight:500}
+@media(max-width:500px){.data-table{font-size:.85rem}.data-table td,.data-table th{padding:10px 12px}}
 
-.result{margin-top:20px;padding:24px;border-radius:12px;text-align:center;transition:all .4s;animation:fadeIn .4s ease}
-.result.hidden{display:none}
-.result.level-0{background:#f8f9fa;border:2px solid #e0e0e0}
-.result.level-1{background:#f0faf0;border:2px solid #a8d8a8}
-.result.level-2{background:#fff8e8;border:2px solid #f0c040}
-.result.level-3{background:#fdf0ee;border:2px solid #c0392b}
-.result-count{font-size:2.4em;font-weight:900;margin-bottom:4px}
-.result.level-0 .result-count{color:#999}
-.result.level-1 .result-count{color:#2d8a2d}
-.result.level-2 .result-count{color:#c08000}
-.result.level-3 .result-count{color:#c0392b}
-.result-text{font-size:1em;line-height:1.6;margin-bottom:16px;color:#333}
-.result-btn.hidden{display:none}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
-.result.level-3{animation:fadeIn .4s ease,pulse 2s ease-in-out 1s 2}
-.quote{border-left:4px solid #ddd;padding:16px 20px;margin:24px 0;background:#f8f9fa;font-style:italic;color:#555;font-size:.95em;line-height:1.8}
+/* ===== CHECKLIST ===== */
+.check-list{list-style:none;margin:24px 0;counter-reset:item}
+.check-list li{padding:12px 0;border-bottom:1px solid var(--line);font-size:1rem;line-height:1.7;display:flex;gap:14px;align-items:flex-start}
+.check-list li:last-child{border-bottom:none}
+.check-mark{flex-shrink:0;width:22px;height:22px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:transparent;margin-top:3px;transition:all .3s;cursor:pointer}
+.check-mark.checked{border-color:var(--red);background:var(--red-bg);color:var(--red)}
 
-/* CTA button */
-.cta-btn{display:block;width:100%;padding:20px;background:#c0392b;color:#fff;text-align:center;font-size:1.1em;font-weight:700;border:none;border-radius:8px;cursor:pointer;text-decoration:none;margin:24px 0;transition:background .3s;letter-spacing:.02em}
-.cta-btn:hover{background:#a93226}
-.cta-small{font-size:.85em;text-align:center;color:#888;margin-top:-12px;margin-bottom:24px}
+/* ===== VOICE QUOTE ===== */
+.voice{margin:32px 0;padding:24px 28px;background:var(--red-bg);border-radius:2px;font-style:italic;color:var(--ink2);font-size:1rem;line-height:1.8;position:relative}
+.voice::before{content:'"';position:absolute;top:8px;left:12px;font-size:2.5rem;color:var(--red);opacity:.3;font-family:Georgia,serif}
+.voice .from{display:block;margin-top:12px;font-style:normal;font-size:.8rem;color:var(--ink4);font-family:'Manrope',sans-serif}
 
-/* Book presentation */
-.book-title{text-align:center;font-size:2.2em;font-weight:900;margin-bottom:8px}
-.book-sub{text-align:center;font-size:1.3em;font-weight:700;color:#1a1a1a;margin-bottom:12px}
-.book-note{text-align:center;font-weight:600;color:#555;margin-bottom:24px}
+/* ===== SECTION DIVIDER ===== */
+.sep{margin:60px auto;text-align:center;color:var(--ink4);font-size:.8rem;letter-spacing:.3em}
 
-/* Image placeholder */
-.img-placeholder{background:#f5f0eb;border-radius:12px;padding:20px;margin:24px 0;text-align:center;color:#999;font-style:italic;font-size:.9em}
+/* ===== SIGNAL SECTIONS ===== */
+.signal-section{margin:40px 0;padding:24px 0;border-top:1px solid var(--line)}
+.signal-num{font-family:'Manrope',sans-serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:4px}
+.signal-title{font-size:1.15rem;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.signal-hint{font-size:.9rem;color:var(--ink3);font-style:italic}
 
-/* Comparison table */
-.compare{width:100%;border-collapse:collapse;margin:24px 0}
-.compare td{padding:12px 16px;border-bottom:1px solid #eee;font-size:.95em;vertical-align:top}
-.compare td:first-child{color:#888;width:45%}
-.compare td:last-child{font-weight:600}
-.compare .arrow{color:#c0392b;font-weight:700;text-align:center;width:30px}
+/* ===== GREEN CHECKMARKS ===== */
+.green-list{list-style:none;margin:24px 0}
+.green-list li{padding:8px 0;font-size:1rem;display:flex;gap:10px;align-items:flex-start;line-height:1.7}
+.green-list li::before{content:'✓';color:var(--sage);font-weight:700;flex-shrink:0;margin-top:1px}
 
-/* Info table */
-.info-table{width:100%;margin:24px 0;border-collapse:collapse}
-.info-table td{padding:14px 16px;border-bottom:1px solid #f0f0f0;vertical-align:middle}
-.info-table td:first-child{width:36px;text-align:center;font-size:1.3em}
-.info-table td:nth-child(2){color:#888;font-size:.95em}
-.info-table td:nth-child(3){font-weight:600;font-size:.95em}
+/* ===== CTA BLOCK ===== */
+.cta-block{margin:48px 0;padding:48px 40px;background:var(--ink);color:var(--bg);text-align:center}
+.cta-block h3{font-size:1.6rem;color:var(--bg);margin-bottom:8px;font-weight:600}
+.cta-price{font-family:'Manrope',sans-serif;font-size:2.8rem;font-weight:800;color:#fff;margin:12px 0 4px}
+.cta-note{font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:24px;font-family:'Manrope',sans-serif}
+.cta-btn{display:inline-block;padding:16px 48px;background:var(--red);color:#fff;font-family:'Manrope',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.cta-btn:hover{background:var(--red-soft);transform:translateY(-2px);box-shadow:0 12px 32px rgba(196,70,58,0.4);text-decoration:none;color:#fff}
+.cta-sub{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:16px;font-family:'Manrope',sans-serif}
 
-/* Section header with red circle */
-.section-head{font-size:1.4em;font-weight:800;margin-bottom:16px}
-.section-head .red-dot{color:#c0392b}
+/* ===== INCLUDES LIST ===== */
+.inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin:32px 0;border:1px solid var(--line)}
+.inc-cell{background:var(--bg);padding:18px 20px;font-size:.9rem}
+.inc-cell .ic-label{font-family:'Manrope',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:4px}
+.inc-cell .ic-val{color:var(--ink);font-weight:500}
+@media(max-width:500px){.inc-grid{grid-template-columns:1fr}}
 
-/* FAQ */
-.faq-q{font-size:1.15em;font-weight:700;margin-bottom:8px;margin-top:24px}
-.faq-a{margin-bottom:0}
-.faq-a li{line-height:1.7}
+/* ===== BOOK IMAGE ===== */
+.book-img-wrap{margin:40px -40px;text-align:center;background:var(--warm);padding:40px 20px}
+.book-img-wrap img{max-width:100%;max-height:440px;display:block;margin:0 auto}
+@media(max-width:600px){.book-img-wrap{margin:40px -18px}}
 
-/* Price box */
-.price-box{text-align:center;margin:32px 0;padding:32px;background:#f8f9fa;border-radius:12px;border:2px solid #e0e0e0}
-.price-num{font-size:3em;font-weight:900;color:#c0392b}
-.price-label{font-size:1em;color:#888;margin-bottom:8px}
+/* ===== FAQ ===== */
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{padding:18px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:1.05rem;font-weight:500;color:var(--ink)}
+.faq-q:hover{color:var(--red)}
+.faq-plus{font-family:'Manrope',sans-serif;font-size:1.3rem;color:var(--ink4);transition:transform .3s}
+.faq-item.open .faq-plus{transform:rotate(45deg);color:var(--red)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{padding-bottom:18px;font-size:.95rem;color:var(--ink3)}
 
-/* Footer */
-.footer{text-align:center;padding:32px 0 16px;font-size:.8em;color:#aaa;border-top:1px solid #eee;margin-top:48px}
-.footer a{color:#999}
+/* ===== FOOTER ===== */
+footer{padding:48px 0;border-top:1px solid var(--line);text-align:center;font-family:'Manrope',sans-serif;font-size:.72rem;color:var(--ink4);line-height:2}
+footer a{color:var(--ink4)}
+
+/* ===== ANIMATIONS ===== */
+.reveal{opacity:0;transform:translateY(16px);transition:all .6s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
-<div class="page">
 
-<!-- HERO -->
-<h1>🚨 ТЕЛО ГОВОРИТ ПЕРВЫМ</h1>
-<p class="subtitle">21 сигнал, который тело посылает за 3–5 лет до болезни</p>
-<p class="subtext">Узнайте, что тело пытается вам сказать — пока не стало поздно</p>
+<nav>
+<div class="col">
+  <div class="nav-left">Архитектура Сознания</div>
+  <a href="https://payform.ru/4vb1Y5q/" class="nav-cta">Получить книгу</a>
+</div>
+</nav>
 
-<hr class="divider">
+<header class="header">
+<div class="col">
+  <span class="header-cat">Электронная книга · PDF</span>
+  <h1>Что ваше тело пытается сказать вам прямо сейчас</h1>
+  <p class="header-deck">Книга-навигатор: 21 скрытый сигнал тела, конкретные анализы для каждого и специалисты, к которым стоит записаться</p>
+  <div class="header-meta">
+    <span>📄 36 страниц</span>
+    <span>🔬 50+ анализов</span>
+    <span>👨‍⚕️ 11 специалистов</span>
+    <span>⏱ Чтение 40 мин</span>
+  </div>
+</div>
+</header>
 
-<!-- RECOGNIZE -->
-<h2>Узнаёте себя?</h2>
-<p><em>«Я просыпаюсь уже уставшей. Как будто сон вообще не помогает.»</em></p>
+<article>
+<div class="col">
 
-<p style="color:#888;font-size:.9em;margin-bottom:16px">Нажмите на каждый пункт, который про вас:</p>
+<!-- INTRO -->
+<p class="drop-cap reveal">Вчера вечером вы легли в 23:00. Проснулись в 7:00 — после восьми часов сна. И первая мысль утром: «Я не отдохнула». Знакомо? Дальше — кофе, без которого невозможно начать день. К обеду живот раздувается. К трём часам дня — туман в голове, забыли, зачем открыли браузер. Вечером — срываетесь на мужа из-за немытой чашки. Ночью просыпаетесь в 3 утра. Без причины. С тревогой.</p>
 
-<div id="quiz">
-<label class="quiz-item"><input type="checkbox" onchange="updateResult()"><span class="qbox"></span><span class="qtxt">Просыпаюсь разбитым даже после 8 часов сна</span></label>
-<label class="quiz-item"><input type="checkbox" onchange="updateResult()"><span class="qbox"></span><span class="qtxt">После еды живот раздувается так, что хочется расстегнуть ремень</span></label>
-<label class="quiz-item"><input type="checkbox" onchange="updateResult()"><span class="qbox"></span><span class="qtxt">Волосы остаются на расчёске целыми прядями</span></label>
-<label class="quiz-item"><input type="checkbox" onchange="updateResult()"><span class="qbox"></span><span class="qtxt">К 3 часам дня выжат — без кофе не могу функционировать</span></label>
-<label class="quiz-item"><input type="checkbox" onchange="updateResult()"><span class="qbox"></span><span class="qtxt">«Мозговой туман» — забываю слова, теряю мысль на полуслове</span></label>
-<label class="quiz-item"><input type="checkbox" onchange="updateResult()"><span class="qbox"></span><span class="qtxt">Врач говорит «анализы в норме» — но я чувствую, что это не так</span></label>
-<label class="quiz-item"><input type="checkbox" onchange="updateResult()"><span class="qbox"></span><span class="qtxt">Взрываюсь из-за мелочей, кричу на близких — а потом ненавижу себя</span></label>
-<label class="quiz-item"><input type="checkbox" onchange="updateResult()"><span class="qbox"></span><span class="qtxt">Вес растёт, хотя ем так же, как раньше</span></label>
-<label class="quiz-item"><input type="checkbox" onchange="updateResult()"><span class="qbox"></span><span class="qtxt">Просыпаюсь в 3–4 утра с тревогой и сердцебиением</span></label>
+<p class="reveal">Вы рассказываете это врачу. Он слушает, кивает, отправляет на общий анализ крови. Через неделю: «Всё в норме. Попейте витамины». А вам всё хуже.</p>
+
+<p class="reveal">Так проходит год. Два. Три.</p>
+
+<div class="pullquote reveal">Проблема не в том, что с вами что-то не так. Проблема в том, что никто не объясняет, какие именно сигналы тело вам посылает — и что с ними делать.</div>
+
+<!-- THE GAP -->
+<h2 class="reveal">Между «здоров» и «болен» — огромная территория</h2>
+
+<p class="reveal">Врачи называют это «субклинические состояния». Мы называем это <strong>серая зона</strong> — когда анализы формально в норме, а тело уже страдает.</p>
+
+<p class="reveal">Ваш ферритин — 15 нг/мл. Лаборатория пишет «норма» (нижняя граница — 10). Но оптимум — 40–60. Ваши клетки недополучают кислород, волосы выпадают, концентрация падает. Формально — здоровы. Фактически — нет.</p>
+
+<p class="reveal">Ваш ТТГ — 3.8. «В пределах нормы». Но для вашего тела оптимум — 1.0–2.0. Щитовидная замедлена. Метаболизм тормозит. Вес ползёт вверх. А врач говорит — диету.</p>
+
+<div class="sidebar reveal">
+<p><strong>Факт:</strong> Диабет 2 типа формируется до 10 лет до того, как сахар впервые «выходит за рамки». Аутоиммунные заболевания тлеют годами до первого обострения. Сердечно-сосудистые проблемы начинаются за десятилетия до инфаркта.</p>
+<p>Всё это время тело посылает сигналы. Просто никто не учит их читать.</p>
 </div>
 
-<div id="result" class="result hidden">
-  <div id="result-count" class="result-count"></div>
-  <div id="result-text" class="result-text"></div>
-  <a href="#buy" id="result-btn" class="cta-btn result-btn hidden">ПОЛУЧИТЬ КНИГУ — 490 ₽</a>
+<!-- WHY DOCTORS MISS -->
+<h2 class="reveal">Три причины, почему система не работает</h2>
+
+<p class="reveal"><strong>Время.</strong> У врача на приёме — 10–15 минут. За это время он успевает выслушать главную жалобу и назначить базовые анализы. Ваши «мелочи» — вздутие, раздражительность, туман в голове — просто не помещаются в этот формат.</p>
+
+<p class="reveal"><strong>Фокус.</strong> Гастроэнтеролог смотрит кишечник. Эндокринолог — гормоны. Невролог — нервы. Но вздутие + усталость + выпадение волос — это может быть одна причина: щитовидная + железо + кишечник. Три специалиста её не увидят.</p>
+
+<p class="reveal"><strong>Шкала.</strong> Стандартные референсные значения охватывают 95% популяции. «Норма» — это не «оптимум». Вы можете быть в «норме» — и при этом ваш иммунитет работает на 60%.</p>
+
+<div class="voice reveal">
+Три года меня гоняли от уролога к кардиологу и к психиатру. Частые позывы, сердцебиение, перепады настроения. В итоге — гормоны. Одна причина. Три года потерянного времени.
 </div>
 
-<hr class="divider">
+<div class="voice reveal">
+Врач 3 года говорил — стресс, попейте магний. Оказалось — щитовидная. Если бы я знала, какой анализ сдать — поймала бы на 3 года раньше.
+</div>
 
-<!-- NOT AGE -->
-<h2>Это не «возраст». Это не «стресс». Это не «все так живут».</h2>
-
-<p>Это <strong>сигналы</strong>, которые тело посылает <strong>ГОДАМИ</strong> — задолго до того, как появится диагноз.</p>
-
-<p><strong>Вот что происходит, когда вы их игнорируете:</strong></p>
-
-<table class="compare">
-<tr><td>Постоянная усталость</td><td class="arrow">→</td><td>Истощение надпочечников</td></tr>
-<tr><td>Вздутие после еды</td><td class="arrow">→</td><td>Воспаление кишечника, СРК</td></tr>
-<tr><td>Выпадение волос</td><td class="arrow">→</td><td>Проблемы щитовидной железы</td></tr>
-<tr><td>Набор веса «из воздуха»</td><td class="arrow">→</td><td>Инсулинорезистентность → диабет</td></tr>
-<tr><td>Мозговой туман</td><td class="arrow">→</td><td>Когнитивный спад</td></tr>
-<tr><td>Пробуждения в 3–4 утра</td><td class="arrow">→</td><td>Перегрузка печени</td></tr>
-</table>
-
-<p style="text-align:center;font-style:italic;color:#c0392b;font-size:.95em">«Вы не заболеваете внезапно. Вы игнорируете сигналы годами.»</p>
-
-<hr class="divider">
-
-<!-- WHY DOCTORS -->
-<h2>Почему врачи не замечают?</h2>
-
-<p>Не потому, что они плохие. А потому, что:</p>
-
-<ul class="emolist">
-<li><span class="emo">⏱</span>Приём длится <strong>10–15 минут</strong>. Нет времени на детали</li>
-<li><span class="emo">📊</span>Они смотрят анализы, а не симптомы. <strong>«Норма» ≠ «оптимум»</strong></li>
-<li><span class="emo">🏥</span>Каждый врач видит свой орган. <strong>Никто не видит картину целиком</strong></li>
-<li><span class="emo">🔍</span>Симптомы выгорания похожи на десятки других состояний</li>
-</ul>
-
-<p><strong><em>Результат?</em></strong></p>
-
-<div class="quote">«Меня три года гоняли от уролога к кардиологу и к психиатру. Частые позывы, сердцебиение, перепады настроения. Оказалось — гормоны. Одна причина. Три года потерянного времени.»</div>
-
-<div class="quote">«3 года врач говорил — стресс. Оказалось — щитовидная.»</div>
-
-<div class="quote">«Мне было 41, когда начались симптомы. Врач сказал — рано, это не щитовидная. Три года я думала, что схожу с ума.»</div>
-
-<hr class="divider">
+<div class="sep">· · ·</div>
 
 <!-- WHAT IF -->
-<h2>А что, если бы вы ЗНАЛИ, на что обращать внимание?</h2>
+<h2 class="reveal">А если бы вы знали, на что смотреть?</h2>
 
-<p>Представьте:</p>
+<p class="reveal">Представьте: вы просыпаетесь разбитой — и вместо «ну, наверное, стресс» открываете книгу на нужной странице. Там написано:</p>
 
-<ul class="greenlist">
-<li>Вы <strong>точно знаете</strong>, какие симптомы — просто усталость, а какие — реальные сигналы</li>
-<li>Вы приходите к врачу <strong>с конкретным списком</strong> — и он наконец вас слышит</li>
-<li>Вы <strong>не гуглите до 3 ночи</strong>, пугая себя страшными диагнозами</li>
-<li>Вы <strong>ловите проблему рано</strong> — когда её легко решить</li>
-<li>Вы <strong>спокойны</strong>, потому что понимаете своё тело</li>
+<div class="sidebar reveal">
+<p><strong>Сигнал #10: Усталость после сна.</strong> Три возможных причины: апноэ сна, нарушение суточного ритма кортизола, нервная система не переключается в режим восстановления. Анализы: кортизол 4 точки, полисомнография, ферритин, ТТГ. Специалист: сомнолог, эндокринолог.</p>
+</div>
+
+<p class="reveal">Вы записываете анализы. Записываетесь к сомнологу. Приходите подготовленной. Врач видит, что вы понимаете ситуацию — и копает глубже, а не отмахивается «попейте витамины».</p>
+
+<ul class="green-list reveal">
+<li>Точно знаете, какие симптомы — усталость, а какие — реальные сигналы</li>
+<li>Приходите к врачу с <strong>конкретным списком</strong> анализов</li>
+<li>Не гуглите до 3 ночи, пугая себя страшными диагнозами</li>
+<li>Ловите проблему рано — когда её ещё легко решить</li>
+<li>Чувствуете спокойствие, потому что понимаете своё тело</li>
 </ul>
 
-<hr class="divider">
+<p class="reveal">Именно для этого написана книга.</p>
+
+<div class="sep">· · ·</div>
 
 <!-- BOOK PRESENTATION -->
-<p class="book-title">📕 «ТЕЛО ГОВОРИТ ПЕРВЫМ»</p>
-<p class="book-sub">21 сигнал за 3–5 лет до болезни</p>
-<p class="book-note">Электронная книга с чеклистом самодиагностики</p>
+<h2 class="reveal" style="text-align:center;font-size:1.9rem">📕 «Тело говорит первым»</h2>
+<p class="reveal" style="text-align:center;color:var(--ink3);font-style:italic;margin-bottom:4px">21 сигнал, который нельзя игнорировать</p>
+<p class="reveal" style="text-align:center;font-family:'Manrope',sans-serif;font-size:.8rem;color:var(--ink4)">Электронная книга · PDF · Чеклист самодиагностики</p>
 
-<img src="https://raw.githubusercontent.com/thebodymindcode/Beyond/main/195a40f8fdc4ba2bc7c1d886881e4710_793b6fe8-4db1-4ec7-ab78-debbadc5fdb0.png" alt="Книга Тело говорит первым" style="width:100%;border-radius:12px;margin:24px 0">
+</div><!-- end col -->
 
-<hr class="divider">
-
-<!-- WHAT'S INSIDE -->
-<h2>Что внутри:</h2>
-
-<h3 class="section-head"><span class="red-dot">🔴</span> РАЗДЕЛ 1: Пищеварение (5 сигналов)</h3>
-<ul class="redlist">
-<li><strong>Вздутие после еды каждый день</strong> <span class="hint">— что проверить, какие анализы</span></li>
-<li><strong>Изменения стула</strong> <span class="hint">— когда это норма, а когда бежать к врачу</span></li>
-<li><strong>Изжога чаще 2 раз в неделю</strong> <span class="hint">— риски, о которых вы не знали</span></li>
-<li><strong>Тяга к сладкому / солёному / мелу</strong> <span class="hint">— что на самом деле за этим стоит</span></li>
-<li><strong>Утренняя тошнота (не беременность)</strong> <span class="hint">— сигнал от печени и надпочечников</span></li>
-</ul>
-
-<hr class="divider">
-
-<h3 class="section-head"><span class="red-dot">🔴</span> РАЗДЕЛ 2: Кожа и волосы (4 сигнала)</h3>
-<ul class="redlist">
-<li><strong>Выпадение волос > 100 в день</strong> <span class="hint">— щитовидная, железо или гормоны?</span></li>
-<li><strong>Сухость кожи, которую не берёт ни один крем</strong> <span class="hint">— проблема изнутри</span></li>
-<li><strong>Новые тёмные пятна</strong> <span class="hint">— печень, гормоны или инсулин?</span></li>
-<li><strong>Синяки от лёгкого прикосновения</strong> <span class="hint">— что нужно проверить срочно</span></li>
-</ul>
-
-<hr class="divider">
-
-<h3 class="section-head"><span class="red-dot">🔴</span> РАЗДЕЛ 3: Энергия и сон (4 сигнала)</h3>
-<ul class="redlist">
-<li><strong>Просыпаетесь уставшим</strong> <span class="hint">— апноэ, кортизол или нервная система?</span></li>
-<li><strong>Пробуждение в 3–4 утра</strong> <span class="hint">— печень, глюкоза, надпочечники</span></li>
-<li><strong>Сонливость после еды</strong> <span class="hint">— каждый 3-й взрослый имеет это и не знает</span></li>
-<li><strong>Не функционируете без кофе</strong> <span class="hint">— ловушка стимуляторов</span></li>
-</ul>
-
-<hr class="divider">
-
-<h3 class="section-head"><span class="red-dot">🔴</span> РАЗДЕЛ 4: Гормоны (4 сигнала)</h3>
-<ul class="redlist">
-<li><strong>Набор веса «из воздуха»</strong> <span class="hint">— 4 гормональных механизма</span></li>
-<li><strong>ПМС, который разрушает жизнь</strong> <span class="hint">— это не «нормальная часть жизни»</span></li>
-<li><strong>Раздражительность на ровном месте</strong> <span class="hint">— это не характер, это нейрохимия</span></li>
-<li><strong>Холодные руки и ноги</strong> <span class="hint">— гипотиреоз, анемия, Рейно</span></li>
-</ul>
-
-<hr class="divider">
-
-<h3 class="section-head"><span class="red-dot">🔴</span> РАЗДЕЛ 5: Сигналы, которые все игнорируют (4 сигнала)</h3>
-<ul class="redlist">
-<li><strong>Храп</strong> <span class="hint">— +30–40% риск инфаркта и инсульта</span></li>
-<li><strong>Ночной туалет 2+ раз</strong> <span class="hint">— диабет, простата или сердце?</span></li>
-<li><strong>Одышка после 2 этажей</strong> <span class="hint">— это не «отсутствие спорта»</span></li>
-<li><strong>Мозговой туман</strong> <span class="hint">— B12, воспаление, гипотиреоз</span></li>
-</ul>
-
-<hr class="divider">
-
-<!-- BONUS -->
-<h2>🎁 БОНУС: Чеклист «Мои сигналы»</h2>
-
-<table class="info-table">
-<tr><td>☑️</td><td>Чеклист самодиагностики</td><td><strong>Отметьте симптомы за 10 минут</strong></td></tr>
-<tr><td>☑️</td><td>К какому врачу идти</td><td><strong>Точное направление по каждому сигналу</strong></td></tr>
-<tr><td>☑️</td><td>Какие анализы сдать</td><td><strong>Конкретный список, не «сдайте всё»</strong></td></tr>
-<tr><td>☑️</td><td>Как разговаривать с врачом</td><td><strong>Чтобы вас наконец услышали</strong></td></tr>
-</table>
-
-<p style="text-align:center;font-style:italic;color:#888;font-size:.9em">Ясность вместо догадок.</p>
-
-<hr class="divider">
-
-<!-- BEFORE / AFTER -->
-<h2>После книги:</h2>
-
-<table class="compare">
-<tr><td>❌ «Что-то не так, но я не знаю что»</td><td class="arrow">→</td><td>✅ Я точно знаю, что проверить</td></tr>
-<tr><td>❌ Врач говорит «это норма»</td><td class="arrow">→</td><td>✅ Прихожу с конкретным списком</td></tr>
-<tr><td>❌ Гуглю симптомы до 3 ночи</td><td class="arrow">→</td><td>✅ Спокойна, потому что понимаю тело</td></tr>
-<tr><td>❌ Терплю, надеясь, что пройдёт</td><td class="arrow">→</td><td>✅ Действую, пока легко исправить</td></tr>
-<tr><td>❌ Боюсь идти к врачу</td><td class="arrow">→</td><td>✅ Иду подготовленной</td></tr>
-</table>
-
-<hr class="divider">
-
-<!-- PRICE -->
-<div class="price-box">
-<div class="price-label">Электронная книга · PDF · Доступ навсегда</div>
-<div class="price-num">490 ₽</div>
-<p style="color:#888;font-size:.9em;margin-top:8px">Дешевле одного визита к терапевту</p>
+<div class="book-img-wrap reveal">
+  <img src="https://raw.githubusercontent.com/thebodymindcode/Beyond/main/195a40f8fdc4ba2bc7c1d886881e4710_793b6fe8-4db1-4ec7-ab78-debbadc5fdb0.png" alt="Книга Тело говорит первым" loading="lazy">
 </div>
 
-<a href="https://payform.ru/4vb1Y5q/" class="cta-btn">ПОЛУЧИТЬ КНИГУ — 490 ₽</a>
-<p class="cta-small">Скачивание сразу после оплаты · PDF</p>
+<div class="col">
 
-<hr class="divider">
+<!-- WHAT'S INSIDE - SIGNALS -->
+<h2 class="reveal">Что разобрано в книге</h2>
+<p class="reveal">Каждый сигнал — по формуле: <strong>что чувствуете</strong> → <strong>что внутри</strong> → <strong>во что превращается</strong> → <strong>какие анализы</strong> → <strong>к кому идти</strong>.</p>
+
+<div class="signal-section reveal"><div class="signal-num">Раздел 1 · Пищеварение · 5 сигналов</div>
+<div class="signal-title">Вздутие · Стул · Изжога · Тяга к сладкому · Утренняя тошнота</div>
+<div class="signal-hint">Кишечник — второй мозг. 90% серотонина, 70% иммунитета. Когда он страдает — страдает всё</div></div>
+
+<div class="signal-section reveal"><div class="signal-num">Раздел 2 · Кожа и волосы · 4 сигнала</div>
+<div class="signal-title">Выпадение волос · Сухость · Тёмные пятна · Синяки</div>
+<div class="signal-hint">Кожа не умеет врать. Она отражает всё, что происходит внутри</div></div>
+
+<div class="signal-section reveal"><div class="signal-num">Раздел 3 · Энергия и сон · 4 сигнала</div>
+<div class="signal-title">Усталость после сна · Пробуждения в 3 утра · Сонливость после еды · Кофеиновая зависимость</div>
+<div class="signal-hint">Энергия — не вопрос дисциплины. Это биохимия</div></div>
+
+<div class="signal-section reveal"><div class="signal-num">Раздел 4 · Гормоны · 4 сигнала</div>
+<div class="signal-title">Набор веса · ПМС · Раздражительность · Холодные конечности</div>
+<div class="signal-hint">Гормоны — дирижёры всего. Когда один сбивается — каскадом летят остальные</div></div>
+
+<div class="signal-section reveal"><div class="signal-num">Раздел 5 · Скрытые сигналы · 4 самых опасных</div>
+<div class="signal-title">Храп · Ночной туалет · Одышка · Мозговой туман</div>
+<div class="signal-hint">Самые тихие — и самые серьёзные. Потому что к ним привыкают</div></div>
+
+<!-- INCLUDES -->
+<h2 class="reveal">Что вы получите</h2>
+
+<div class="inc-grid reveal">
+<div class="inc-cell"><div class="ic-label">Разбор</div><div class="ic-val">21 сигнал тела — от симптома до диагноза</div></div>
+<div class="inc-cell"><div class="ic-label">Анализы</div><div class="ic-val">50+ конкретных исследований с названиями</div></div>
+<div class="inc-cell"><div class="ic-label">Врачи</div><div class="ic-val">Точный специалист по каждому сигналу</div></div>
+<div class="inc-cell"><div class="ic-label">Чеклист</div><div class="ic-val">Отметь симптомы, распечатай, возьми к врачу</div></div>
+<div class="inc-cell"><div class="ic-label">Инфографики</div><div class="ic-val">11 визуальных карт — от «Сахарные качели» до «Блуждающий нерв»</div></div>
+<div class="inc-cell"><div class="ic-label">Корневая причина</div><div class="ic-val">Почему тело застряло в режиме борьбы — и как переключить</div></div>
+</div>
+
+<!-- BEFORE AFTER TABLE -->
+<h2 class="reveal">До и после книги</h2>
+
+<table class="data-table reveal">
+<tr><th>Сейчас</th><th>После книги</th></tr>
+<tr><td>«Что-то не так — но не знаю что»</td><td>Точно знаю, что проверить первым</td></tr>
+<tr><td>Врач говорит «это норма»</td><td>Прихожу с конкретным списком анализов</td></tr>
+<tr><td>Гуглю симптомы до 3 ночи</td><td>Спокойна — понимаю, что происходит</td></tr>
+<tr><td>Терплю и надеюсь, что пройдёт</td><td>Действую, пока легко исправить</td></tr>
+</table>
+
+<!-- FIRST CTA -->
+<div class="cta-block reveal">
+<h3>«Тело говорит первым»</h3>
+<div class="cta-price">490 ₽</div>
+<div class="cta-note">PDF · 36 страниц · Скачивание сразу</div>
+<a href="https://payform.ru/4vb1Y5q/" class="cta-btn">Получить книгу →</a>
+<div class="cta-sub">Дешевле одного визита к терапевту</div>
+</div>
+
+
+<div class="sep">· · ·</div>
 
 <!-- FAQ -->
-<h2>Вопросы:</h2>
+<h2 class="reveal">Вопросы</h2>
 
-<p class="faq-q">Это ещё один «страшилка-гайд»?</p>
-<ul class="faq-a"><li>Нет. Спокойно, без паники, по делу. Цель — <strong>понимание</strong>, а не страх.</li></ul>
+<div class="faq-item reveal">
+<div class="faq-q">Это книга-страшилка? <span class="faq-plus">+</span></div>
+<div class="faq-a"><p>Нет. Спокойный тон, конкретика, никакой паники. Цель — понимание, а не страх. Вы закроете книгу с ясностью, а не с тревогой.</p></div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Я не медик — пойму? <span class="faq-plus">+</span></div>
+<div class="faq-a"><p>Да. Написано для обычных людей. Простой язык, никакого жаргона. Если вы читаете этот текст — вы поймёте книгу.</p></div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Это заменяет врача? <span class="faq-plus">+</span></div>
+<div class="faq-a"><p>Нет, и не должно. Книга помогает подготовиться к визиту: знать, какие анализы попросить, какие вопросы задать, к какому специалисту идти. Это ваш переводчик с языка тела.</p></div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Только для женщин? <span class="faq-plus">+</span></div>
+<div class="faq-a"><p>Нет. 18 из 21 сигнала — для обоих полов. Где нужно — отдельные анализы для мужчин и женщин.</p></div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Много сигналов — что делать? <span class="faq-plus">+</span></div>
+<div class="faq-a"><p>Один симптом — не повод паниковать. Три и более — сигнал действовать. Книга даёт чёткий план: что проверить в первую очередь.</p></div>
+</div>
+<div class="faq-item reveal">
+<div class="faq-q">Когда получу? <span class="faq-plus">+</span></div>
+<div class="faq-a"><p>Мгновенно. Ссылка на скачивание — сразу после оплаты.</p></div>
+</div>
 
-<p class="faq-q">Я не медик — я пойму?</p>
-<ul class="faq-a"><li>Да. Простой язык. Никакого медицинского жаргона.</li></ul>
+<div class="sep">· · ·</div>
 
-<p class="faq-q">Это заменяет врача?</p>
-<ul class="faq-a"><li>Нет, и не должно. Книга поможет <strong>подготовиться к приёму</strong> — знать, что спросить, какие анализы попросить и к какому специалисту идти.</li></ul>
+<!-- FINAL -->
+<div style="text-align:center;margin:48px 0" class="reveal">
+<h2 style="font-size:1.6rem;margin-bottom:12px">Тело уже говорит. Вы слышите?</h2>
+<p style="color:var(--ink3);margin-bottom:28px">21 сигнал. 50+ анализов. Конкретные специалисты.<br>Всё, чтобы перестать гадать — и начать действовать.</p>
+<a href="https://payform.ru/4vb1Y5q/" class="cta-btn">Получить книгу — 490 ₽</a>
+<p style="font-size:.75rem;color:var(--ink4);margin-top:14px;font-family:'Manrope',sans-serif">PDF · Навсегда · Мгновенно</p>
+</div>
 
-<p class="faq-q">Это только для женщин?</p>
-<ul class="faq-a"><li>Нет. 18 из 21 сигнала актуальны для обоих полов. Где нужно — указаны отдельные анализы для мужчин и женщин.</li></ul>
+</div><!-- end col -->
+</article>
 
-<p class="faq-q">Что если у меня много сигналов?</p>
-<ul class="faq-a"><li>Один симптом — не повод паниковать. 3 и более — <strong>сигнал обратить внимание и действовать</strong>. Книга даёт чёткий план: что проверить в первую очередь.</li></ul>
-
-<p class="faq-q">Как быстро я получу книгу?</p>
-<ul class="faq-a"><li>Мгновенно. Ссылка на скачивание появится сразу после оплаты.</li></ul>
-
-<hr class="divider">
-
-<!-- FINAL CTA -->
-<h2 style="text-align:center">Тело уже говорит.<br>Вопрос — слышите ли вы.</h2>
-
-<p style="text-align:center;margin-top:16px;color:#555">21 сигнал. 50+ анализов. Конкретные специалисты.<br>Всё, что нужно, чтобы перестать гадать — и начать действовать.</p>
-
-<a href="https://payform.ru/4vb1Y5q/" class="cta-btn">ПОЛУЧИТЬ КНИГУ — 490 ₽</a>
-<p class="cta-small">PDF · Доступ навсегда · Мгновенное скачивание</p>
-
-<!-- FOOTER -->
-<div class="footer">
+<footer>
+<div class="col">
 <p>© 2026 Дарья Ростовцева · Архитектура Сознания</p>
 <p>ИП Ростовцева Дарья Валерьевна · ИНН: 241103415641</p>
-<p style="margin-top:8px"><a href="https://t.me/+aEgupwOOOq84YTNi">Telegram</a> · <a href="https://instagram.com/thebodymindcode">Instagram</a> · <a href="https://t.me/TheBodyMindCode_support">Поддержка</a></p>
-<p style="margin-top:12px;font-size:.75em">Книга не является медицинской услугой и не заменяет консультацию врача.</p>
+<p><a href="https://t.me/+aEgupwOOOq84YTNi">Telegram</a> · <a href="https://instagram.com/thebodymindcode">Instagram</a> · <a href="https://t.me/TheBodyMindCode_support">Поддержка</a></p>
+<p style="margin-top:8px;font-size:.65rem;opacity:.5">Книга не является медицинской услугой и не заменяет консультацию врача.</p>
 </div>
+</footer>
 
-</div>
 <script>
-function updateResult() {
-  const checks = document.querySelectorAll('#quiz input[type=checkbox]');
-  let count = 0;
-  checks.forEach(c => {
-    const label = c.closest('.quiz-item');
-    if (c.checked) { label.classList.add('checked'); count++; }
-    else { label.classList.remove('checked'); }
-  });
-  
-  const result = document.getElementById('result');
-  const rCount = document.getElementById('result-count');
-  const rText = document.getElementById('result-text');
-  const rBtn = document.getElementById('result-btn');
-  
-  result.className = 'result';
-  rBtn.classList.add('hidden');
-  
-  if (count === 0) {
-    result.classList.add('hidden');
-    return;
-  }
-  
-  rCount.textContent = count + ' из 9';
-  
-  if (count <= 2) {
-    result.classList.add('level-1');
-    rText.innerHTML = '👀 <strong>Пока немного</strong> — но обратите внимание. Эти симптомы могут быть первыми ласточками. В книге — точные анализы, чтобы проверить себя заранее.';
-  } else if (count <= 5) {
-    result.classList.add('level-2');
-    rText.innerHTML = '⚠️ <strong>Это уже не «просто стресс».</strong> Ваше тело посылает конкретные сигналы. 3+ совпадений — повод действовать. Книга покажет, какие анализы сдать и к кому идти — именно по вашим симптомам.';
-    rBtn.classList.remove('hidden');
-  } else {
-    result.classList.add('level-3');
-    rText.innerHTML = '🚨 <strong>' + count + ' совпадений — ваше тело давно просит помощи.</strong><br>Это не возраст и не стресс. Это конкретные сигналы, у которых есть конкретные причины — и конкретные решения. Не откладывайте. Книга даст вам чёткий план: что проверить, какие анализы сдать, к кому идти.';
-    rBtn.classList.remove('hidden');
-  }
-}
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('vis')})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.parentElement,o=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')})});
+document.querySelectorAll('.check-mark').forEach(c=>{c.addEventListener('click',e=>{e.stopPropagation();c.classList.toggle('checked');c.textContent=c.classList.contains('checked')?'✓':''})});
 </script>
 </body>
 </html>
