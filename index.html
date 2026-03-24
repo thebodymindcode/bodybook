@@ -4,396 +4,511 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Тело говорит первым — 30 сигналов · 7 систем тела</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#FDFCFA;--warm:#F6F1EB;--ink:#1B1B18;--ink2:#3D3D37;--ink3:#6B6B62;--ink4:#9E9E94;--red:#C4463A;--red2:#E8675C;--red-bg:rgba(196,70,58,0.05);--sage:#6B8F71;--sage2:#8BAE91;--sage-bg:rgba(107,143,113,0.07);--line:rgba(27,27,24,0.07);--card:#fff}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Lora',Georgia,serif;background:var(--bg);color:var(--ink2);-webkit-font-smoothing:antialiased}
+:root{--bg:#FAF8F5;--warm:#F2EDE6;--card:#FFFFFF;--ink:#1C1A17;--ink2:#3A3733;--ink3:#71706B;--ink4:#A5A29D;--red:#C4463A;--red2:#D4574B;--redbg:rgba(196,70,58,.04);--sage:#7B9E7F;--sagebg:rgba(123,158,127,.06);--line:rgba(0,0,0,.06)}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink2);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--red);color:#fff}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+img{max-width:100%;display:block}
 
-/* LAYOUT */
-.wide{max-width:1140px;margin:0 auto;padding:0 40px}
-.narrow{max-width:760px;margin:0 auto;padding:0 40px}
-@media(max-width:768px){.wide,.narrow{padding:0 20px}}
+/* ── Layout ── */
+.w{max-width:1080px;margin:0 auto;padding:0 48px}
+@media(max-width:768px){.w{padding:0 24px}}
 
-/* TYPOGRAPHY */
-h1,h2,h3{font-family:'Lora',serif;color:var(--ink);font-weight:600}
-p{margin-bottom:22px;font-size:1.15rem;line-height:1.9;color:var(--ink2)}
-strong{font-weight:600;color:var(--ink)}
+/* ── Nav ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:20px 0;transition:all .5s}
+.nav.scrolled{background:rgba(250,248,245,.92);backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--line);padding:14px 0}
+.nav .w{display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;color:var(--ink3);letter-spacing:.06em}
+.nav-btn{padding:11px 28px;background:var(--red);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:all .4s}
+.nav-btn:hover{background:var(--red2);box-shadow:0 8px 24px rgba(196,70,58,.25);transform:translateY(-1px)}
 
-/* NAV */
-nav{padding:18px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(253,252,250,.95);backdrop-filter:blur(20px);z-index:100}
-nav .wide{display:flex;justify-content:space-between;align-items:center}
-.nav-logo{font-family:'Manrope',sans-serif;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);font-weight:600}
-.nav-cta{font-family:'Manrope',sans-serif;font-size:.72rem;padding:12px 28px;background:var(--ink);color:#fff;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;font-weight:600;transition:all .3s;border-radius:2px}
-.nav-cta:hover{background:var(--red)}
+/* ── Hero ── */
+.hero{padding:160px 0 100px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-100px;top:0;width:500px;height:500px;background:radial-gradient(circle,rgba(196,70,58,.03),transparent 70%);pointer-events:none}
+.hero-tag{font-size:.65rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:32px;display:flex;align-items:center;gap:12px}
+.hero-tag::before{content:'';width:32px;height:1px;background:var(--red)}
+.hero-inner{display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:center}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:40px}.hero{padding:120px 0 60px}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:500;line-height:1.15;color:var(--ink);margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--red);font-weight:400}
+.hero-desc{font-size:1.05rem;line-height:1.85;color:var(--ink3);margin-bottom:36px;max-width:520px}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap}
+.hero-stat{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--ink3);font-weight:500}
+.hero-stat .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.hero-stat .dot.r{background:var(--red)}
+.hero-stat .dot.s{background:var(--sage)}
 
-/* HERO */
-.hero{padding:100px 0 80px;border-bottom:1px solid var(--line)}
-.hero-label{font-family:'Manrope',sans-serif;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:28px}
-.hero h1{font-size:clamp(2.6rem,5.5vw,4.2rem);line-height:1.12;margin-bottom:24px;font-weight:700;max-width:800px}
-.hero-deck{font-size:1.3rem;color:var(--ink3);font-style:italic;max-width:640px;line-height:1.7;margin-bottom:32px;font-weight:400}
-.hero-stats{display:flex;gap:32px;flex-wrap:wrap}
-.hero-stat{display:flex;align-items:center;gap:10px;font-family:'Manrope',sans-serif;font-size:.85rem;color:var(--ink3);font-weight:500}
-.hero-stat svg{width:20px;height:20px;flex-shrink:0}
-@media(max-width:600px){.hero{padding:60px 0 50px}.hero-stats{gap:16px}.hero-stat{font-size:.8rem}}
+/* Hero SVG */
+.hero-visual{position:relative}
+.hero-visual svg{width:100%;height:auto}
+@media(max-width:900px){.hero-visual{max-width:300px;margin:0 auto}}
 
-/* SECTIONS */
-section{padding:80px 0}
-section.alt{background:var(--warm)}
-.s-label{font-family:'Manrope',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:12px}
-.s-title{font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.2;margin-bottom:20px;font-weight:600;color:var(--ink)}
-.s-sub{font-size:1.15rem;color:var(--ink3);max-width:640px;line-height:1.8;margin-bottom:40px}
-.sep{text-align:center;padding:40px 0;color:var(--ink4);font-size:.85rem;letter-spacing:.4em}
+/* ── Sections ── */
+.sec{padding:100px 0}
+.sec.alt{background:var(--warm)}
+.sec-tag{font-size:.62rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:500;line-height:1.2;color:var(--ink);margin-bottom:16px}
+.sec-desc{font-size:1.05rem;line-height:1.85;color:var(--ink3);max-width:580px;margin-bottom:40px}
+@media(max-width:768px){.sec{padding:64px 0}}
 
-/* PULLQUOTE */
-.pullquote{margin:48px 0;padding:32px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);font-family:'Lora',serif;font-size:1.65rem;line-height:1.4;font-weight:600;color:var(--ink);font-style:italic}
-@media(max-width:600px){.pullquote{font-size:1.3rem}}
+/* ── Story ── */
+.story{font-family:'Cormorant Garamond',serif;font-size:1.35rem;line-height:1.9;color:var(--ink2);max-width:680px;margin:0 auto}
+.story p{margin-bottom:24px}
+.story strong{font-weight:600;color:var(--ink)}
 
-/* VOICE */
-.voice{margin:28px 0;padding:28px 32px;background:var(--red-bg);border-left:3px solid var(--red);font-style:italic;color:var(--ink2);font-size:1.1rem;line-height:1.85}
-@media(max-width:600px){.voice{padding:20px 18px}}
+.quote-block{margin:48px 0;padding:36px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+.quote-block p{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;font-style:italic;color:var(--ink);line-height:1.45;margin:0}
+@media(max-width:600px){.quote-block p{font-size:1.3rem}}
 
-/* SIDEBAR */
-.sidebar{margin:40px 0;padding:32px 36px;background:var(--warm);border-left:3px solid var(--red)}
-.sidebar p{margin-bottom:8px;font-size:1.05rem}
-.sidebar p:last-child{margin-bottom:0}
+.voice-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:40px 0}
+@media(max-width:600px){.voice-row{grid-template-columns:1fr}}
+.voice{padding:24px 28px;background:var(--redbg);border-left:2px solid var(--red);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;line-height:1.8;color:var(--ink2)}
 
-/* GREEN LIST */
-.gl{list-style:none;margin:28px 0}
-.gl li{padding:10px 0;font-size:1.1rem;display:flex;gap:14px;align-items:flex-start;line-height:1.8}
-.gl li svg{flex-shrink:0;margin-top:5px;width:22px;height:22px}
+.sidebar{padding:28px 32px;background:var(--warm);border-left:3px solid var(--red);margin:36px 0;font-size:1rem;line-height:1.85}
 
-/* === SYSTEMS ANIMATION SECTION === */
-.systems-wrap{display:grid;grid-template-columns:360px 1fr;gap:60px;align-items:start;margin:40px 0}
-@media(max-width:900px){.systems-wrap{grid-template-columns:1fr;gap:32px}}
+/* ── Systems ── */
+.sys-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:40px 0}
+@media(max-width:700px){.sys-grid{grid-template-columns:1fr}}
+.sys-card{padding:28px 32px;background:var(--card);border:1px solid var(--line);transition:all .5s cubic-bezier(.25,.46,.45,.94);position:relative;overflow:hidden}
+.sys-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--sage);transform:scaleY(0);transition:transform .4s;transform-origin:top}
+.sys-card:hover{border-color:var(--sage);box-shadow:0 12px 40px rgba(0,0,0,.05);transform:translateY(-4px)}
+.sys-card:hover::after{transform:scaleY(1)}
+.sys-card-top{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.sys-icon{width:40px;height:40px;border-radius:50%;background:var(--sagebg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sys-icon svg{width:18px;height:18px}
+.sys-num{font-size:.58rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red)}
+.sys-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink)}
+.sys-signals{font-size:.88rem;color:var(--ink3);line-height:1.7;margin-top:4px}
+.sys-meta{font-size:.72rem;color:var(--ink4);margin-top:8px;font-weight:500}
 
-/* Body SVG */
-.body-svg-wrap{position:sticky;top:120px}
-.body-svg{width:100%;max-width:360px;margin:0 auto;display:block}
-.body-dot{fill:var(--red);opacity:.3;transition:all .6s}
-.body-dot.active{opacity:1;r:8}
-.body-line{stroke:var(--red);stroke-width:1;opacity:.15;transition:opacity .6s}
-.body-line.active{opacity:.6}
-@media(max-width:900px){.body-svg-wrap{position:relative;top:0;max-width:280px;margin:0 auto}}
+.sys-card.rz{border-color:rgba(196,70,58,.15);background:var(--redbg)}
+.sys-card.rz::after{background:var(--red)}
+.sys-card.rz:hover{border-color:var(--red)}
+.sys-card.rz .sys-icon{background:var(--redbg)}
 
-/* System cards */
-.sys-cards{display:flex;flex-direction:column;gap:20px}
-.sys-card{padding:28px 32px;background:var(--card);border:1px solid var(--line);border-radius:4px;cursor:pointer;transition:all .4s;position:relative;overflow:hidden}
-.sys-card::before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;background:var(--sage);opacity:0;transition:opacity .3s}
-.sys-card:hover,.sys-card.active{border-color:var(--sage);box-shadow:0 8px 32px rgba(0,0,0,.06)}
-.sys-card:hover::before,.sys-card.active::before{opacity:1}
-.sys-card-head{display:flex;align-items:center;gap:16px;margin-bottom:8px}
-.sys-card-icon{width:44px;height:44px;border-radius:50%;background:var(--sage-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.sys-card-icon svg{width:22px;height:22px}
-.sys-card-num{font-family:'Manrope',sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);font-weight:700}
-.sys-card-name{font-size:1.15rem;font-weight:600;color:var(--ink)}
-.sys-card-signals{font-size:.95rem;color:var(--ink3);line-height:1.7;margin-top:4px}
-.sys-card-count{font-family:'Manrope',sans-serif;font-size:.72rem;color:var(--ink4);margin-top:6px}
-.sys-card.red-zone{border-color:rgba(196,70,58,.2);background:var(--red-bg)}
-.sys-card.red-zone::before{background:var(--red)}
-.sys-card.red-zone .sys-card-icon{background:var(--red-bg)}
+/* ── Formula ── */
+.formula{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:28px;background:var(--warm);margin:40px 0}
+.f-step{display:flex;align-items:center;gap:6px;padding:10px 16px;background:var(--card);border:1px solid var(--line);font-size:.82rem;font-weight:500;color:var(--ink2)}
+.f-step svg{width:16px;height:16px;flex-shrink:0}
+.f-arr{color:var(--red);font-size:1.1rem;font-weight:700}
+@media(max-width:600px){.f-step{padding:8px 10px;font-size:.75rem}}
 
-/* FORMULA */
-.formula-wrap{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:40px 0;padding:32px;background:var(--warm);border-radius:4px}
-.formula-step{display:flex;align-items:center;gap:8px;background:var(--card);padding:12px 18px;border:1px solid var(--line);font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:500;color:var(--ink2)}
-.formula-step svg{width:20px;height:20px;flex-shrink:0}
-.formula-arrow{color:var(--red);font-weight:700;font-size:1.2rem}
-@media(max-width:600px){.formula-step{padding:8px 12px;font-size:.78rem}}
+/* ── Includes ── */
+.inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:40px 0}
+@media(max-width:768px){.inc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.inc-grid{grid-template-columns:1fr}}
+.inc-card{padding:28px;background:var(--card);border:1px solid var(--line);transition:all .4s}
+.inc-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.05)}
+.inc-icon{width:44px;height:44px;border-radius:50%;background:var(--sagebg);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.inc-icon svg{width:20px;height:20px}
+.inc-card h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.inc-card p{font-size:.88rem;color:var(--ink3);line-height:1.7;margin:0}
 
-/* INCLUDES GRID */
-.inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:40px 0}
-.inc-card{padding:28px;background:var(--card);border:1px solid var(--line);border-radius:4px;transition:all .3s}
-.inc-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.06)}
-.inc-icon{width:48px;height:48px;border-radius:50%;background:var(--sage-bg);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.inc-icon svg{width:24px;height:24px}
-.inc-card h3{font-size:1.05rem;margin-bottom:6px;font-weight:600}
-.inc-card p{font-size:.95rem;color:var(--ink3);line-height:1.7;margin-bottom:0}
-@media(max-width:768px){.inc-grid{grid-template-columns:1fr}}
+/* ── Before/After ── */
+.ba{display:grid;grid-template-columns:1fr 1fr;margin:40px 0;border:1px solid var(--line);overflow:hidden}
+@media(max-width:600px){.ba{grid-template-columns:1fr}}
+.ba-side{padding:32px}
+.ba-side.before{background:var(--redbg)}
+.ba-side.after{background:var(--sagebg)}
+.ba-label{font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:20px}
+.ba-side.before .ba-label{color:var(--red)}
+.ba-side.after .ba-label{color:var(--sage)}
+.ba-item{padding:10px 0;font-size:.95rem;line-height:1.7;color:var(--ink2);border-bottom:1px solid rgba(0,0,0,.04)}
+.ba-item:last-child{border:none}
 
-/* BEFORE/AFTER */
-.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:40px 0;border:1px solid var(--line);overflow:hidden;border-radius:4px}
-.ba-col{padding:32px}
-.ba-col.before{background:var(--red-bg)}
-.ba-col.after{background:var(--sage-bg)}
-.ba-label{font-family:'Manrope',sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;margin-bottom:20px}
-.ba-col.before .ba-label{color:var(--red)}
-.ba-col.after .ba-label{color:var(--sage)}
-.ba-item{padding:10px 0;font-size:1rem;color:var(--ink2);line-height:1.7;border-bottom:1px solid rgba(0,0,0,.04)}
-.ba-item:last-child{border-bottom:none}
-@media(max-width:600px){.ba-grid{grid-template-columns:1fr}}
+/* ── Green checks ── */
+.checks{list-style:none;margin:28px 0}
+.checks li{padding:12px 0;font-size:1.05rem;display:flex;gap:14px;align-items:flex-start;line-height:1.8;color:var(--ink2)}
+.checks li svg{flex-shrink:0;margin-top:5px;width:20px;height:20px}
 
-/* CTA */
-.cta-section{text-align:center;padding:80px 0;background:var(--ink);color:#fff}
-.cta-section h2{color:#fff;font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:8px}
-.cta-price{font-family:'Manrope',sans-serif;font-size:3.5rem;font-weight:800;margin:16px 0 6px}
-.cta-note{font-size:.9rem;color:rgba(255,255,255,.45);margin-bottom:32px;font-family:'Manrope',sans-serif}
-.cta-btn{display:inline-block;padding:18px 56px;background:var(--red);color:#fff;font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .4s;border-radius:2px}
+/* ── CTA ── */
+.cta-sec{background:var(--ink);color:#fff;text-align:center;padding:80px 0}
+.cta-sec h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:500;color:#fff;margin-bottom:8px}
+.cta-price{font-size:3.2rem;font-weight:800;margin:16px 0 6px}
+.cta-note{font-size:.85rem;color:rgba(255,255,255,.4);margin-bottom:28px}
+.cta-btn{display:inline-block;padding:18px 52px;background:var(--red);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:all .4s}
 .cta-btn:hover{background:var(--red2);transform:translateY(-3px);box-shadow:0 16px 40px rgba(196,70,58,.35)}
-.cta-sub{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:18px;font-family:'Manrope',sans-serif}
+.cta-sub{font-size:.72rem;color:rgba(255,255,255,.3);margin-top:16px}
 
-/* FAQ */
-.faq-item{border-bottom:1px solid var(--line)}
-.faq-q{padding:22px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:1.15rem;font-weight:500;color:var(--ink);transition:color .3s}
+/* ── Book wrap ── */
+.book-img{text-align:center;padding:48px 0;background:var(--warm)}
+.book-img img{max-height:500px;margin:0 auto;box-shadow:0 24px 64px rgba(0,0,0,.1);border-radius:4px}
+
+/* ── FAQ ── */
+.faq{border-bottom:1px solid var(--line)}
+.faq-q{padding:22px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--ink);transition:color .3s}
 .faq-q:hover{color:var(--red)}
-.faq-plus{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--ink4);transition:all .3s;flex-shrink:0}
-.faq-item.open .faq-plus{background:var(--red);border-color:var(--red);color:#fff;transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.faq-item.open .faq-a{max-height:300px}
-.faq-a p{padding-bottom:20px;font-size:1.05rem;color:var(--ink3)}
+.faq-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
+.faq-icon svg{width:12px;height:12px;transition:transform .3s}
+.faq.open .faq-icon{background:var(--red);border-color:var(--red)}
+.faq.open .faq-icon svg{transform:rotate(45deg)}
+.faq.open .faq-icon svg line{stroke:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.25,.46,.45,.94)}
+.faq.open .faq-a{max-height:200px}
+.faq-a p{padding-bottom:22px;font-size:.98rem;color:var(--ink3);line-height:1.8}
 
-/* BOOK IMAGE */
-.book-wrap{margin:48px 0;text-align:center;background:var(--warm);padding:48px 20px;border-radius:4px}
-.book-wrap img{max-width:100%;max-height:520px;display:block;margin:0 auto;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.1)}
-
-/* FOOTER */
-footer{padding:48px 0;border-top:1px solid var(--line);text-align:center;font-family:'Manrope',sans-serif;font-size:.75rem;color:var(--ink4);line-height:2.2}
+/* ── Footer ── */
+footer{padding:48px 0;border-top:1px solid var(--line);text-align:center;font-size:.72rem;color:var(--ink4);line-height:2.2}
 footer a{color:var(--ink4);text-decoration:underline;text-underline-offset:2px}
 
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(20px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}
-.reveal.vis{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:.1s}
-.reveal-delay-2{transition-delay:.2s}
-.reveal-delay-3{transition-delay:.3s}
+/* ── Animations ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.anim{opacity:0;transform:translateY(28px);transition:all .8s cubic-bezier(.25,.46,.45,.94)}
+.anim.show{opacity:1;transform:translateY(0)}
+.anim-d1{transition-delay:.1s}
+.anim-d2{transition-delay:.2s}
+.anim-d3{transition-delay:.3s}
+.anim-d4{transition-delay:.4s}
+
+/* Hero entrance */
+.hero-tag,.hero h1,.hero-desc,.hero-stats,.hero-visual{opacity:0;animation:fadeUp .9s cubic-bezier(.25,.46,.45,.94) forwards}
+.hero h1{animation-delay:.15s}
+.hero-desc{animation-delay:.3s}
+.hero-stats{animation-delay:.45s}
+.hero-visual{animation-delay:.6s}
+
+/* Pulse dots */
+@keyframes pulse{0%,100%{opacity:.2;r:3}50%{opacity:.7;r:5}}
+
+/* Constellation rotation */
+.nodes-rotate{animation:spinSlow 60s linear infinite;transform-origin:200px 200px}
+.ring-rotate{animation:spinSlow 90s linear infinite reverse;transform-origin:200px 200px}
+@keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.constellation{position:relative;width:100%;max-width:420px;margin:0 auto}
+.constellation svg{width:100%;overflow:visible}
+/* Counter-rotate text so it stays readable */
+.node-text{animation:counterSpin 60s linear infinite;transform-origin:center}
+
 </style>
 </head>
 <body>
 
-<nav><div class="wide">
+<!-- NAV -->
+<div class="nav" id="nav"><div class="w">
   <div class="nav-logo">Архитектура Сознания</div>
-  <a href="https://payform.ru/4vb1Y5q/" class="nav-cta">Получить книгу</a>
-</div></nav>
+  <a href="https://payform.ru/4vb1Y5q/" class="nav-cta nav-btn">Получить книгу</a>
+</div></div>
 
 <!-- HERO -->
-<section class="hero"><div class="wide">
-  <div class="hero-label">Электронная книга · 30 сигналов · 7 систем</div>
-  <h1>Ваше тело уже давно с вами разговаривает. Вы просто не&nbsp;знали, как слушать</h1>
-  <p class="hero-deck">30 скрытых сигналов тела, разложенных по 7 системам. Конкретные анализы, конкретные врачи, конкретные действия</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>40+ страниц</div>
-    <div class="hero-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>60+ анализов</div>
-    <div class="hero-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>7 систем тела</div>
-    <div class="hero-stat"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Красная зона</div>
+<section class="hero"><div class="w">
+  <div class="hero-tag">30 сигналов · 7 систем тела · красная зона</div>
+  <div class="hero-inner">
+    <div>
+      <h1>Тело говорит <em>первым</em></h1>
+      <p class="hero-desc">30 скрытых сигналов, разложенных по 7 системам. Конкретные анализы для каждого. Конкретные врачи. Конкретные действия.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="dot s"></span>40+ страниц</div>
+        <div class="hero-stat"><span class="dot s"></span>60+ анализов</div>
+        <div class="hero-stat"><span class="dot s"></span>7 систем</div>
+        <div class="hero-stat"><span class="dot r"></span>Красная зона</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="constellation">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="glow"><stop offset="0%" stop-color="#C4463A" stop-opacity=".08"/><stop offset="100%" stop-color="#C4463A" stop-opacity="0"/></radialGradient>
+          </defs>
+
+          <!-- Background pulse -->
+          <circle cx="200" cy="200" r="140" fill="url(#glow)"><animate attributeName="r" values="120;150;120" dur="5s" repeatCount="indefinite"/></circle>
+
+          <!-- Connection lines - rotate with nodes -->
+          <g class="ring-rotate">
+            <polygon points="200,52 328,112 348,240 278,345 122,345 52,240 72,112" fill="none" stroke="#C4463A" stroke-width=".5" opacity=".12"/>
+            <line x1="200" y1="52" x2="278" y2="345" stroke="#C4463A" stroke-width=".3" opacity=".06"/>
+            <line x1="328" y1="112" x2="122" y2="345" stroke="#C4463A" stroke-width=".3" opacity=".06"/>
+            <line x1="72" y1="112" x2="348" y2="240" stroke="#C4463A" stroke-width=".3" opacity=".06"/>
+            <line x1="52" y1="240" x2="328" y2="112" stroke="#C4463A" stroke-width=".3" opacity=".06"/>
+          </g>
+
+          <!-- ROTATING NODES -->
+          <g class="nodes-rotate">
+
+            <!-- 1: Пищеварение (top) -->
+            <circle cx="200" cy="52" r="38" fill="white" stroke="#7B9E7F" stroke-width="1.8"/>
+            <circle cx="200" cy="52" r="38" fill="none" stroke="#7B9E7F" stroke-width=".5" opacity="0">
+              <animate attributeName="r" values="38;46;38" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0;.3;0" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="200" cy="42" r="4" fill="#C4463A" opacity=".8"><animate attributeName="opacity" values=".5;1;.5" dur="2.5s" repeatCount="indefinite"/></circle>
+
+            <!-- 2: Гормоны -->
+            <circle cx="328" cy="112" r="38" fill="white" stroke="#7B9E7F" stroke-width="1.8"/>
+            <circle cx="328" cy="112" r="38" fill="none" stroke="#7B9E7F" stroke-width=".5" opacity="0">
+              <animate attributeName="r" values="38;46;38" dur="3.5s" repeatCount="indefinite" begin=".4s"/>
+              <animate attributeName="opacity" values="0;.3;0" dur="3.5s" repeatCount="indefinite" begin=".4s"/>
+            </circle>
+            <circle cx="328" cy="102" r="4" fill="#C4463A" opacity=".8"><animate attributeName="opacity" values=".5;1;.5" dur="3s" repeatCount="indefinite" begin=".3s"/></circle>
+
+            <!-- 3: Иммунитет -->
+            <circle cx="348" cy="240" r="38" fill="white" stroke="#7B9E7F" stroke-width="1.8"/>
+            <circle cx="348" cy="240" r="38" fill="none" stroke="#7B9E7F" stroke-width=".5" opacity="0">
+              <animate attributeName="r" values="38;46;38" dur="4s" repeatCount="indefinite" begin=".8s"/>
+              <animate attributeName="opacity" values="0;.3;0" dur="4s" repeatCount="indefinite" begin=".8s"/>
+            </circle>
+            <circle cx="348" cy="230" r="4" fill="#C4463A" opacity=".8"><animate attributeName="opacity" values=".5;1;.5" dur="2.8s" repeatCount="indefinite" begin=".6s"/></circle>
+
+            <!-- 4: Нервная -->
+            <circle cx="278" cy="345" r="38" fill="white" stroke="#7B9E7F" stroke-width="1.8"/>
+            <circle cx="278" cy="345" r="38" fill="none" stroke="#7B9E7F" stroke-width=".5" opacity="0">
+              <animate attributeName="r" values="38;46;38" dur="3.8s" repeatCount="indefinite" begin="1.2s"/>
+              <animate attributeName="opacity" values="0;.3;0" dur="3.8s" repeatCount="indefinite" begin="1.2s"/>
+            </circle>
+            <circle cx="278" cy="335" r="4" fill="#C4463A" opacity=".8"><animate attributeName="opacity" values=".5;1;.5" dur="3.2s" repeatCount="indefinite" begin=".9s"/></circle>
+
+            <!-- 5: Детокс -->
+            <circle cx="122" cy="345" r="38" fill="white" stroke="#7B9E7F" stroke-width="1.8"/>
+            <circle cx="122" cy="345" r="38" fill="none" stroke="#7B9E7F" stroke-width=".5" opacity="0">
+              <animate attributeName="r" values="38;46;38" dur="4.2s" repeatCount="indefinite" begin="1.6s"/>
+              <animate attributeName="opacity" values="0;.3;0" dur="4.2s" repeatCount="indefinite" begin="1.6s"/>
+            </circle>
+            <circle cx="122" cy="335" r="4" fill="#C4463A" opacity=".8"><animate attributeName="opacity" values=".5;1;.5" dur="3.6s" repeatCount="indefinite" begin="1.2s"/></circle>
+
+            <!-- 6: Кожа -->
+            <circle cx="52" cy="240" r="38" fill="white" stroke="#7B9E7F" stroke-width="1.8"/>
+            <circle cx="52" cy="240" r="38" fill="none" stroke="#7B9E7F" stroke-width=".5" opacity="0">
+              <animate attributeName="r" values="38;46;38" dur="3.6s" repeatCount="indefinite" begin="2s"/>
+              <animate attributeName="opacity" values="0;.3;0" dur="3.6s" repeatCount="indefinite" begin="2s"/>
+            </circle>
+            <circle cx="52" cy="230" r="4" fill="#C4463A" opacity=".8"><animate attributeName="opacity" values=".5;1;.5" dur="4s" repeatCount="indefinite" begin="1.5s"/></circle>
+
+            <!-- 7: Сердце -->
+            <circle cx="72" cy="112" r="38" fill="white" stroke="#7B9E7F" stroke-width="1.8"/>
+            <circle cx="72" cy="112" r="38" fill="none" stroke="#7B9E7F" stroke-width=".5" opacity="0">
+              <animate attributeName="r" values="38;46;38" dur="3.2s" repeatCount="indefinite" begin="2.4s"/>
+              <animate attributeName="opacity" values="0;.3;0" dur="3.2s" repeatCount="indefinite" begin="2.4s"/>
+            </circle>
+            <circle cx="72" cy="102" r="4" fill="#C4463A" opacity=".8"><animate attributeName="opacity" values=".5;1;.5" dur="2.2s" repeatCount="indefinite" begin="1.8s"/></circle>
+
+          </g>
+
+          <!-- STATIC TEXT LABELS (don't rotate) -->
+          <text x="200" y="57" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1C1A17" font-weight="800">ПИЩЕВАРЕНИЕ</text>
+          <text x="200" y="69" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#A5A29D" font-weight="600">5 сигналов</text>
+
+          <text x="328" y="117" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1C1A17" font-weight="800">ГОРМОНЫ</text>
+          <text x="328" y="129" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#A5A29D" font-weight="600">5 сигналов</text>
+
+          <text x="348" y="245" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1C1A17" font-weight="800">ИММУНИТЕТ</text>
+          <text x="348" y="257" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#A5A29D" font-weight="600">3 сигнала</text>
+
+          <text x="278" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1C1A17" font-weight="800">НЕРВНАЯ</text>
+          <text x="278" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#A5A29D" font-weight="600">4 сигнала</text>
+
+          <text x="122" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1C1A17" font-weight="800">ДЕТОКС</text>
+          <text x="122" y="362" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#A5A29D" font-weight="600">3 сигнала</text>
+
+          <text x="52" y="245" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1C1A17" font-weight="800">КОЖА</text>
+          <text x="52" y="257" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#A5A29D" font-weight="600">3 сигнала</text>
+
+          <text x="72" y="117" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" fill="#1C1A17" font-weight="800">СЕРДЦЕ</text>
+          <text x="72" y="129" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#A5A29D" font-weight="600">2 сигнала</text>
+
+          <!-- Center -->
+          <circle cx="200" cy="200" r="6" fill="#C4463A" opacity=".5">
+            <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".3;.7;.3" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <text x="200" y="204" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" fill="#C4463A" font-weight="800" opacity=".6">30</text>
+
+          <!-- Orbiting particles -->
+          <circle r="3" fill="#C4463A" opacity=".5">
+            <animateMotion dur="10s" repeatCount="indefinite" path="M200,52 Q350,52 328,112 Q380,200 348,240 Q340,370 278,345 Q200,400 122,345 Q60,370 52,240 Q20,200 72,112 Q50,52 200,52Z"/>
+            <animate attributeName="opacity" values=".2;.7;.2" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="2.5" fill="#7B9E7F" opacity=".4">
+            <animateMotion dur="14s" repeatCount="indefinite" path="M200,52 Q350,52 328,112 Q380,200 348,240 Q340,370 278,345 Q200,400 122,345 Q60,370 52,240 Q20,200 72,112 Q50,52 200,52Z" begin="-5s"/>
+            <animate attributeName="opacity" values=".15;.5;.15" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="2" fill="#C4463A" opacity=".3">
+            <animateMotion dur="18s" repeatCount="indefinite" path="M200,52 Q350,52 328,112 Q380,200 348,240 Q340,370 278,345 Q200,400 122,345 Q60,370 52,240 Q20,200 72,112 Q50,52 200,52Z" begin="-10s"/>
+            <animate attributeName="opacity" values=".1;.45;.1" dur="5s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- Bottom text -->
+          <text x="200" y="398" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="13" fill="#71706B" font-style="italic">сбой в одной системе → каскад во всех</text>
+        </svg>
+      </div>
+    </div>
   </div>
 </div></section>
 
 <!-- STORY -->
-<section><div class="narrow">
-  <p class="reveal" style="font-size:1.25rem;line-height:2"><span style="float:left;font-size:4rem;line-height:.85;padding:4px 12px 0 0;color:var(--red);font-weight:700">В</span>чера вечером вы легли вовремя. Проснулись после восьми часов сна — и первая мысль: «я не отдохнула». Дальше — кофе, иначе не включиться. К обеду живот раздувается. К трём — туман в голове. Вечером — сорвались на близкого из-за мелочи. Ночью проснулись в три часа. С тревогой в груди.</p>
-  <p class="reveal">Вы рассказываете врачу. Он кивает: «Общий анализ крови... Всё в норме. Попейте витамины.» А вам всё хуже.</p>
-  <div class="pullquote reveal">Проблема не в том, что с вами что-то не так. Проблема в том, что никто не объясняет, какие именно сигналы посылает тело — и что с ними делать.</div>
+<section class="sec"><div class="w">
+  <div class="story">
+    <p class="anim">Вчера вечером вы легли вовремя. Проснулись после восьми часов сна — и первая мысль: <strong>«я не отдохнула»</strong>. Кофе, иначе не включиться. К обеду живот раздувается. К трём — туман в голове. Вечером — сорвались на близкого из-за мелочи. Ночью проснулись в три часа. С тревогой.</p>
+    <p class="anim">Вы идёте к врачу. «Всё в норме. Попейте витамины.» А вам всё хуже.</p>
+  </div>
+  <div class="quote-block anim"><p>Проблема не в вас. Проблема в том, что никто не объясняет, какие сигналы тело посылает — и что с ними делать.</p></div>
 </div></section>
 
-<!-- NETWORK -->
-<section class="alt"><div class="wide">
-  <div class="s-label reveal">Почему так происходит</div>
-  <h2 class="s-title reveal">Тело — не набор органов. Это единая сеть</h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+<!-- WHY -->
+<section class="sec alt"><div class="w">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
     <div>
-      <p class="reveal">Гастроэнтеролог смотрит кишечник. Эндокринолог — гормоны. Невролог — нервы. Но <strong>вздутие + выпадение волос + бессонница</strong> — это может быть одна причина. Три врача её не увидят.</p>
-      <p class="reveal">Ваш ферритин — 15 нг/мл. Лаборатория пишет «норма». Но оптимум — 40–60. Волосы выпадают, энергии нет. <strong>Формально здоровы. Фактически — нет.</strong></p>
-      <div class="sidebar reveal">
-        <p>Между «здоров» и «болен» — огромная территория. Мы называем это <strong>серая зона</strong>: анализы не кричат, а тело уже страдает.</p>
+      <div class="sec-tag anim">Почему так происходит</div>
+      <h2 class="sec-title anim">Тело — не набор органов. Это единая сеть</h2>
+      <p class="anim" style="font-size:1.05rem;line-height:1.85;color:var(--ink2)">Гастроэнтеролог смотрит кишечник. Эндокринолог — гормоны. Но <strong>вздутие + волосы + бессонница</strong> — одна причина. Три врача её не увидят.</p>
+      <div class="sidebar anim"><p style="margin:0;font-size:1rem;line-height:1.8">Между «здоров» и «болен» — огромная территория. <strong>Серая зона:</strong> анализы формально в норме, а тело уже страдает. Ферритин 15 — «норма». Оптимум — 40–60.</p></div>
+    </div>
+    <div>
+      <div class="voice-row" style="grid-template-columns:1fr;margin:0">
+        <div class="voice anim">Три года гоняли от уролога к кардиологу. Одна причина — гормоны. Три года.</div>
+        <div class="voice anim anim-d1">Врач говорил — стресс. Оказалось — щитовидная. Поймала бы раньше, если бы знала, что проверить.</div>
       </div>
     </div>
-    <div class="reveal">
-      <!-- SVG: Body Network Infographic -->
-      <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px;margin:0 auto;display:block">
-        <circle cx="200" cy="60" r="36" fill="var(--sage-bg)" stroke="var(--sage)" stroke-width="1"/>
-        <text x="200" y="56" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="var(--ink3)" font-weight="600">ПИЩЕВАРЕНИЕ</text>
-        <text x="200" y="68" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="var(--ink4)">5 сигналов</text>
-        <circle cx="340" cy="130" r="36" fill="var(--sage-bg)" stroke="var(--sage)" stroke-width="1"/>
-        <text x="340" y="126" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="var(--ink3)" font-weight="600">ГОРМОНЫ</text>
-        <text x="340" y="138" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="var(--ink4)">5 сигналов</text>
-        <circle cx="370" cy="240" r="36" fill="var(--sage-bg)" stroke="var(--sage)" stroke-width="1"/>
-        <text x="370" y="236" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="var(--ink3)" font-weight="600">ИММУНИТЕТ</text>
-        <text x="370" y="248" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="var(--ink4)">3 сигнала</text>
-        <circle cx="300" cy="340" r="36" fill="var(--sage-bg)" stroke="var(--sage)" stroke-width="1"/>
-        <text x="300" y="336" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="var(--ink3)" font-weight="600">НЕРВНАЯ</text>
-        <text x="300" y="348" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="var(--ink4)">4 сигнала</text>
-        <circle cx="100" cy="340" r="36" fill="var(--sage-bg)" stroke="var(--sage)" stroke-width="1"/>
-        <text x="100" y="336" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="var(--ink3)" font-weight="600">ДЕТОКС</text>
-        <text x="100" y="348" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="var(--ink4)">3 сигнала</text>
-        <circle cx="30" cy="240" r="36" fill="var(--sage-bg)" stroke="var(--sage)" stroke-width="1"/>
-        <text x="30" y="236" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="var(--ink3)" font-weight="600">КОЖА</text>
-        <text x="30" y="248" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="var(--ink4)">3 сигнала</text>
-        <circle cx="60" cy="130" r="36" fill="var(--sage-bg)" stroke="var(--sage)" stroke-width="1"/>
-        <text x="60" y="126" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="var(--ink3)" font-weight="600">СЕРДЦЕ</text>
-        <text x="60" y="138" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" fill="var(--ink4)">2 сигнала</text>
-        <!-- Connection lines -->
-        <line x1="200" y1="96" x2="340" y2="94" stroke="var(--sage)" stroke-width=".8" opacity=".3"/>
-        <line x1="340" y1="166" x2="370" y2="204" stroke="var(--sage)" stroke-width=".8" opacity=".3"/>
-        <line x1="370" y1="276" x2="300" y2="304" stroke="var(--sage)" stroke-width=".8" opacity=".3"/>
-        <line x1="300" y1="340" x2="100" y2="340" stroke="var(--sage)" stroke-width=".8" opacity=".3"/>
-        <line x1="100" y1="304" x2="30" y2="276" stroke="var(--sage)" stroke-width=".8" opacity=".3"/>
-        <line x1="30" y1="204" x2="60" y2="166" stroke="var(--sage)" stroke-width=".8" opacity=".3"/>
-        <line x1="60" y1="94" x2="200" y2="96" stroke="var(--sage)" stroke-width=".8" opacity=".3"/>
-        <!-- Cross lines -->
-        <line x1="200" y1="96" x2="300" y2="304" stroke="var(--red)" stroke-width=".5" opacity=".12"/>
-        <line x1="200" y1="96" x2="100" y2="304" stroke="var(--red)" stroke-width=".5" opacity=".12"/>
-        <line x1="340" y1="130" x2="30" y2="240" stroke="var(--red)" stroke-width=".5" opacity=".12"/>
-        <line x1="60" y1="130" x2="370" y2="240" stroke="var(--red)" stroke-width=".5" opacity=".12"/>
-        <!-- Red dots at intersections -->
-        <circle cx="200" cy="200" r="5" fill="var(--red)" opacity=".4"><animate attributeName="opacity" values=".2;.6;.2" dur="3s" repeatCount="indefinite"/></circle>
-        <circle cx="170" cy="160" r="3" fill="var(--red)" opacity=".3"><animate attributeName="opacity" values=".15;.5;.15" dur="4s" repeatCount="indefinite"/></circle>
-        <circle cx="230" cy="250" r="3" fill="var(--red)" opacity=".3"><animate attributeName="opacity" values=".1;.45;.1" dur="3.5s" repeatCount="indefinite"/></circle>
-        <circle cx="150" cy="270" r="3" fill="var(--red)" opacity=".3"><animate attributeName="opacity" values=".2;.5;.2" dur="2.8s" repeatCount="indefinite"/></circle>
-        <circle cx="260" cy="170" r="3" fill="var(--red)" opacity=".3"><animate attributeName="opacity" values=".1;.55;.1" dur="3.2s" repeatCount="indefinite"/></circle>
-        <text x="200" y="395" text-anchor="middle" font-family="Lora,serif" font-size="10" fill="var(--ink3)" font-style="italic">Сбой в одной системе → каскад во всех</text>
-      </svg>
-    </div>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px">
-    <div class="voice reveal">Три года меня гоняли от уролога к кардиологу. Одна причина. Три года.</div>
-    <div class="voice reveal">Врач говорил — стресс. Оказалось — щитовидная. Поймала бы раньше.</div>
   </div>
 </div></section>
 
 <!-- IMAGINE -->
-<section><div class="narrow">
-  <div class="s-label reveal">Другой сценарий</div>
-  <h2 class="s-title reveal">А если бы вы знали, на что смотреть?</h2>
-  <p class="reveal" style="font-size:1.15rem">Открываете книгу: <strong>Сигнал #14. Усталость после сна.</strong> Три причины. Конкретные анализы. К какому врачу. Что спросить.</p>
-  <ul class="gl reveal">
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Точно знаете, какие симптомы — усталость, а какие — настоящие сигналы</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Приходите к врачу <strong>с конкретным списком</strong> — и вас наконец слышат</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Не гуглите до трёх ночи, пугая себя диагнозами</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ловите проблему рано — когда её ещё легко решить</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Спокойствие — потому что понимаете своё тело</li>
+<section class="sec"><div class="w" style="max-width:720px">
+  <div class="sec-tag anim">Другой сценарий</div>
+  <h2 class="sec-title anim">А если бы вы знали, на что смотреть?</h2>
+  <p class="anim" style="font-size:1.1rem;line-height:1.85;color:var(--ink2)">Открываете книгу: <strong>Сигнал #14. Усталость после сна.</strong> Три причины. Конкретные анализы. Конкретный врач.</p>
+  <ul class="checks">
+    <li class="anim"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Точно знаете, какие симптомы — усталость, а какие — сигналы</li>
+    <li class="anim anim-d1"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Приходите к врачу <strong>с конкретным списком</strong></li>
+    <li class="anim anim-d2"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Не гуглите до трёх ночи, пугая себя диагнозами</li>
+    <li class="anim anim-d3"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ловите проблему рано — когда легко исправить</li>
   </ul>
 </div></section>
 
 <!-- BOOK -->
-<section class="alt"><div class="wide" style="text-align:center">
-  <div class="s-label reveal">Электронная книга</div>
-  <h2 class="s-title reveal" style="text-align:center;margin-left:auto;margin-right:auto">«Тело говорит первым»</h2>
-  <p class="reveal" style="text-align:center;color:var(--red);font-weight:600;font-size:1.2rem;margin-bottom:4px">30 сигналов · 7 систем тела · красная зона</p>
-  <p class="reveal" style="text-align:center;font-family:'Manrope',sans-serif;font-size:.9rem;color:var(--ink4)">PDF · Чеклист самодиагностики · 15 инфографик</p>
-  <div class="book-wrap reveal">
-    <img src="https://raw.githubusercontent.com/thebodymindcode/bodybook/main/bf3110f4c9c90465be2e128ab481458b_c9eeed4b-0525-41e8-9e32-60736a3f473e.png" alt="Книга" loading="lazy">
-  </div>
-</div></section>
+<div class="book-img anim">
+  <img src="https://raw.githubusercontent.com/thebodymindcode/bodybook/main/bf3110f4c9c90465be2e128ab481458b_c9eeed4b-0525-41e8-9e32-60736a3f473e.png" alt="Книга" loading="lazy">
+</div>
 
 <!-- SYSTEMS -->
-<section><div class="wide">
-  <div class="s-label reveal">7 систем + красная зона</div>
-  <h2 class="s-title reveal">Каждый сигнал — от симптома до действия</h2>
-  
-  <div class="formula-wrap reveal">
-    <div class="formula-step"><svg viewBox="0 0 24 24" fill="var(--red)" width="18" height="18"><circle cx="12" cy="12" r="6"/></svg>Что чувствуете</div>
-    <span class="formula-arrow">→</span>
-    <div class="formula-step"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Что внутри</div>
-    <span class="formula-arrow">→</span>
-    <div class="formula-step"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2" width="18" height="18"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Во что превращается</div>
-    <span class="formula-arrow">→</span>
-    <div class="formula-step"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Анализы</div>
-    <span class="formula-arrow">→</span>
-    <div class="formula-step"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" width="18" height="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Врач</div>
+<section class="sec"><div class="w">
+  <div class="sec-tag anim">7 систем + красная зона</div>
+  <h2 class="sec-title anim">Каждый сигнал — от симптома до действия</h2>
+
+  <div class="formula anim">
+    <div class="f-step"><svg viewBox="0 0 24 24" fill="var(--red)"><circle cx="12" cy="12" r="5"/></svg>Ощущение</div>
+    <span class="f-arr">→</span>
+    <div class="f-step"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16" y2="16"/></svg>Причина</div>
+    <span class="f-arr">→</span>
+    <div class="f-step"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>Последствия</div>
+    <span class="f-arr">→</span>
+    <div class="f-step"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Анализы</div>
+    <span class="f-arr">→</span>
+    <div class="f-step"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Врач</div>
   </div>
 
-  <div class="sys-cards">
-    <div class="sys-card reveal"><div class="sys-card-head"><div class="sys-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4"/></svg></div><div><div class="sys-card-num">Система 1</div><div class="sys-card-name">Пищеварительная сеть</div></div></div><div class="sys-card-signals">Вздутие · изменения стула · изжога · тяга к еде · утренняя тошнота</div><div class="sys-card-count">5 сигналов · 90% серотонина производится здесь</div></div>
-    
-    <div class="sys-card reveal"><div class="sys-card-head"><div class="sys-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><div class="sys-card-num">Система 2</div><div class="sys-card-name">Гормональная сеть</div></div></div><div class="sys-card-signals">Набор веса · ПМС / цикл · исчезло либидо · постоянно холодно · потливость</div><div class="sys-card-count">5 сигналов · дирижёры всего тела</div></div>
-    
-    <div class="sys-card reveal"><div class="sys-card-head"><div class="sys-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="sys-card-num">Система 3</div><div class="sys-card-name">Иммунная сеть</div></div></div><div class="sys-card-signals">Простуды чаще 4 раз/год · раны заживают медленно · новые аллергии</div><div class="sys-card-count">3 сигнала · 70% иммунитета — в кишечнике</div></div>
-    
-    <div class="sys-card reveal"><div class="sys-card-head"><div class="sys-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg></div><div><div class="sys-card-num">Система 4</div><div class="sys-card-name">Нервная сеть — энергия и стресс</div></div></div><div class="sys-card-signals">Усталость после сна · пробуждение в 3 утра · сонливость после еды · раздражительность</div><div class="sys-card-count">4 сигнала · два режима тела — и вы застряли в первом</div></div>
-    
-    <div class="sys-card reveal"><div class="sys-card-head"><div class="sys-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/></svg></div><div><div class="sys-card-num">Система 5</div><div class="sys-card-name">Детокс-сеть — печень и выведение</div></div></div><div class="sys-card-signals">Отёки по утрам · запах тела изменился · ночной туалет 2+ раз</div><div class="sys-card-count">3 сигнала · 500+ функций, работает 24/7</div></div>
-    
-    <div class="sys-card reveal"><div class="sys-card-head"><div class="sys-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div><div class="sys-card-num">Система 6</div><div class="sys-card-name">Кожа, волосы, ногти — зеркало</div></div></div><div class="sys-card-signals">Выпадение волос · ломкие ногти · сухость / пятна / синяки</div><div class="sys-card-count">3 сигнала · внешнее отражение внутренних процессов</div></div>
-    
-    <div class="sys-card reveal"><div class="sys-card-head"><div class="sys-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><div class="sys-card-num">Система 7</div><div class="sys-card-name">Сердце и сосуды</div></div></div><div class="sys-card-signals">Одышка после 1–2 этажей · храп (даже лёгкий)</div><div class="sys-card-count">2 сигнала · самые тихие и самые серьёзные</div></div>
-    
-    <div class="sys-card red-zone reveal"><div class="sys-card-head"><div class="sys-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div><div class="sys-card-num" style="color:#8B0000">⛔ Красная зона</div><div class="sys-card-name">5 экстренных сигналов</div></div></div><div class="sys-card-signals">Потеря веса >5 кг · резкое изменение зрения · онемение · провалы памяти · кровь</div><div class="sys-card-count">Не ждите. Не гуглите. К врачу — сегодня.</div></div>
+  <div class="sys-grid">
+    <div class="sys-card anim"><div class="sys-card-top"><div class="sys-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg></div><div><div class="sys-num">Система 1</div><div class="sys-name">Пищеварительная сеть</div></div></div><div class="sys-signals">Вздутие · стул · изжога · тяга к еде · тошнота</div><div class="sys-meta">5 сигналов · 90% серотонина здесь</div></div>
+
+    <div class="sys-card anim anim-d1"><div class="sys-card-top"><div class="sys-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><div class="sys-num">Система 2</div><div class="sys-name">Гормональная сеть</div></div></div><div class="sys-signals">Вес · ПМС · либидо · холод · потливость</div><div class="sys-meta">5 сигналов · дирижёры тела</div></div>
+
+    <div class="sys-card anim"><div class="sys-card-top"><div class="sys-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="sys-num">Система 3</div><div class="sys-name">Иммунная сеть</div></div></div><div class="sys-signals">Простуды · раны · аллергии</div><div class="sys-meta">3 сигнала · 70% иммунитета в кишечнике</div></div>
+
+    <div class="sys-card anim anim-d1"><div class="sys-card-top"><div class="sys-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><div class="sys-num">Система 4</div><div class="sys-name">Нервная сеть</div></div></div><div class="sys-signals">Усталость · 3 утра · сонливость · раздражительность</div><div class="sys-meta">4 сигнала · два режима тела</div></div>
+
+    <div class="sys-card anim"><div class="sys-card-top"><div class="sys-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z"/><path d="M2 12h20"/></svg></div><div><div class="sys-num">Система 5</div><div class="sys-name">Детокс-сеть</div></div></div><div class="sys-signals">Отёки · запах тела · ночной туалет</div><div class="sys-meta">3 сигнала · печень: 500+ функций</div></div>
+
+    <div class="sys-card anim anim-d1"><div class="sys-card-top"><div class="sys-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><div class="sys-num">Система 6</div><div class="sys-name">Кожа, волосы, ногти</div></div></div><div class="sys-signals">Выпадение · ломкие ногти · сухость / пятна / синяки</div><div class="sys-meta">3 сигнала · зеркало внутренних процессов</div></div>
+
+    <div class="sys-card anim"><div class="sys-card-top"><div class="sys-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div><div class="sys-num">Система 7</div><div class="sys-name">Сердце и сосуды</div></div></div><div class="sys-signals">Одышка после 1–2 этажей · храп</div><div class="sys-meta">2 сигнала · самые тихие и серьёзные</div></div>
+
+    <div class="sys-card rz anim anim-d1"><div class="sys-card-top"><div class="sys-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div><div class="sys-num" style="color:#8B0000">⛔ Красная зона</div><div class="sys-name">5 экстренных сигналов</div></div></div><div class="sys-signals">Потеря веса · зрение · онемение · память · кровь</div><div class="sys-meta">Не ждите. К врачу — сегодня.</div></div>
   </div>
-  
-  <p class="reveal" style="text-align:center;font-style:italic;color:var(--ink3);font-size:1rem;margin-top:24px">После каждой системы — связка: как она влияет на остальные. Этого не видят врачи.</p>
 </div></section>
 
 <!-- INCLUDES -->
-<section class="alt"><div class="wide">
-  <div class="s-label reveal">Что внутри</div>
-  <h2 class="s-title reveal">Всё, что нужно, чтобы действовать</h2>
+<section class="sec alt"><div class="w">
+  <div class="sec-tag anim">Что внутри книги</div>
+  <h2 class="sec-title anim">Всё, что нужно, чтобы действовать</h2>
   <div class="inc-grid">
-    <div class="inc-card reveal"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg></div><h3>30 сигналов</h3><p>Полный разбор: от «что чувствуете» до «к кому идти»</p></div>
-    <div class="inc-card reveal reveal-delay-1"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>60+ анализов</h3><p>Конкретные названия. Не «сдайте всё», а точечно под симптом</p></div>
-    <div class="inc-card reveal reveal-delay-2"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Список врачей</h3><p>Точный специалист по каждому сигналу — от сомнолога до гематолога</p></div>
-    <div class="inc-card reveal"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Чеклист</h3><p>Распечатайте, отметьте, возьмите к врачу. 30 пунктов по 7 системам</p></div>
-    <div class="inc-card reveal reveal-delay-1"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><h3>15 инфографик</h3><p>Визуальные карты: от «Сахарные качели» до «Блуждающий нерв»</p></div>
-    <div class="inc-card reveal reveal-delay-2"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.8"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></div><h3>Корневая причина</h3><p>Почему тело застряло в режиме борьбы — и как переключить</p></div>
+    <div class="inc-card anim"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg></div><h3>30 сигналов</h3><p>От «что чувствуете» до «к кому идти»</p></div>
+    <div class="inc-card anim anim-d1"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>60+ анализов</h3><p>Точечно под каждый симптом</p></div>
+    <div class="inc-card anim anim-d2"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Список врачей</h3><p>От сомнолога до гематолога</p></div>
+    <div class="inc-card anim"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><h3>Чеклист</h3><p>Распечатайте и возьмите к врачу</p></div>
+    <div class="inc-card anim anim-d1"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><h3>15 инфографик</h3><p>Визуальные карты и схемы</p></div>
+    <div class="inc-card anim anim-d2"><div class="inc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5"><path d="M18 3a3 3 0 00-3 3v12a3 3 0 003 3 3 3 0 003-3 3 3 0 00-3-3H6a3 3 0 00-3 3 3 3 0 003 3 3 3 0 003-3V6a3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3h12a3 3 0 003-3 3 3 0 00-3-3z"/></svg></div><h3>Корневая причина</h3><p>Почему тело застряло и как переключить</p></div>
   </div>
 </div></section>
 
-<!-- BEFORE/AFTER -->
-<section><div class="wide">
-  <div class="s-label reveal">Трансформация</div>
-  <h2 class="s-title reveal">До и после книги</h2>
-  <div class="ba-grid reveal">
-    <div class="ba-col before">
-      <div class="ba-label">❌ Сейчас</div>
+<!-- BA -->
+<section class="sec"><div class="w">
+  <div class="sec-tag anim">Трансформация</div>
+  <h2 class="sec-title anim">До и после книги</h2>
+  <div class="ba anim">
+    <div class="ba-side before"><div class="ba-label">❌ Сейчас</div>
       <div class="ba-item">«Что-то не так, но не знаю что»</div>
       <div class="ba-item">Врач говорит «это норма»</div>
       <div class="ba-item">Гуглю симптомы до 3 ночи</div>
       <div class="ba-item">Терплю и надеюсь</div>
       <div class="ba-item">Хожу от врача к врачу</div>
     </div>
-    <div class="ba-col after">
-      <div class="ba-label">✅ После книги</div>
-      <div class="ba-item">Точно знаю, что проверить первым</div>
+    <div class="ba-side after"><div class="ba-label">✅ После книги</div>
+      <div class="ba-item">Точно знаю, что проверить</div>
       <div class="ba-item">Прихожу с конкретным списком</div>
       <div class="ba-item">Спокойна — понимаю тело</div>
-      <div class="ba-item">Действую, пока легко исправить</div>
+      <div class="ba-item">Действую, пока легко</div>
       <div class="ba-item">Вижу систему целиком</div>
     </div>
   </div>
 </div></section>
 
 <!-- CTA -->
-<section class="cta-section">
-<div class="wide">
-  <h2 class="reveal">«Тело говорит первым»</h2>
-  <div class="cta-price reveal">490 ₽</div>
-  <div class="cta-note reveal">PDF · 40+ страниц · 15 инфографик · Скачивание сразу</div>
-  <a href="https://payform.ru/4vb1Y5q/" class="cta-btn reveal">Получить книгу →</a>
-  <div class="cta-sub reveal">Дешевле одного визита к терапевту</div>
-</div>
+<section class="cta-sec">
+  <h2 class="anim">«Тело говорит первым»</h2>
+  <div class="cta-price anim">490 ₽</div>
+  <div class="cta-note anim">PDF · 40+ страниц · 15 инфографик · Мгновенный доступ</div>
+  <a href="https://payform.ru/4vb1Y5q/" class="cta-btn anim">Получить книгу →</a>
+  <div class="cta-sub anim">Дешевле одного визита к терапевту</div>
 </section>
 
 <!-- FAQ -->
-<section><div class="wide" style="max-width:800px">
-  <div class="s-label reveal">Вопросы</div>
-  <div class="faq-item reveal"><div class="faq-q">Это книга-страшилка? <span class="faq-plus">+</span></div><div class="faq-a"><p>Нет. Спокойный тон, конкретика, без паники. Цель — ясность, а не страх.</p></div></div>
-  <div class="faq-item reveal"><div class="faq-q">Я не медик — пойму? <span class="faq-plus">+</span></div><div class="faq-a"><p>Да. Простой язык, никакого жаргона. Написано для обычных людей.</p></div></div>
-  <div class="faq-item reveal"><div class="faq-q">Это заменяет врача? <span class="faq-plus">+</span></div><div class="faq-a"><p>Нет. Книга помогает подготовиться: какие анализы попросить, к какому специалисту идти.</p></div></div>
-  <div class="faq-item reveal"><div class="faq-q">Только для женщин? <span class="faq-plus">+</span></div><div class="faq-a"><p>Нет. 26 из 30 сигналов — для обоих полов. Где нужно — отдельные рекомендации.</p></div></div>
-  <div class="faq-item reveal"><div class="faq-q">Чем отличается от гугла? <span class="faq-plus">+</span></div><div class="faq-a"><p>Структура: 30 сигналов по 7 системам, связки между ними, конкретные анализы и врачи. Без хаоса и рекламы БАДов.</p></div></div>
-  <div class="faq-item reveal"><div class="faq-q">Много сигналов — паниковать? <span class="faq-plus">+</span></div><div class="faq-a"><p>1–3 — наблюдайте. 4–7 — действуйте. 8+ — не откладывайте. Красная зона — сегодня.</p></div></div>
-  <div class="faq-item reveal"><div class="faq-q">Когда получу? <span class="faq-plus">+</span></div><div class="faq-a"><p>Мгновенно. Ссылка — сразу после оплаты.</p></div></div>
+<section class="sec"><div class="w" style="max-width:780px">
+  <div class="sec-tag anim">Вопросы</div>
+  <div class="faq anim"><div class="faq-q">Это книга-страшилка?<span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink4)" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="faq-a"><p>Нет. Спокойный тон, конкретика. Цель — ясность, а не страх.</p></div></div>
+  <div class="faq anim"><div class="faq-q">Я не медик — пойму?<span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink4)" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="faq-a"><p>Да. Простой язык, никакого жаргона.</p></div></div>
+  <div class="faq anim"><div class="faq-q">Это заменяет врача?<span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink4)" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="faq-a"><p>Нет. Помогает подготовиться: какие анализы, к какому специалисту.</p></div></div>
+  <div class="faq anim"><div class="faq-q">Только для женщин?<span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink4)" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="faq-a"><p>Нет. 26 из 30 — для обоих полов. Где нужно — отдельные рекомендации.</p></div></div>
+  <div class="faq anim"><div class="faq-q">Когда получу?<span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink4)" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div><div class="faq-a"><p>Мгновенно. Ссылка — сразу после оплаты.</p></div></div>
 </div></section>
 
-<!-- FINAL CTA -->
-<section class="alt" style="text-align:center;padding:100px 0"><div class="wide">
-  <h2 class="reveal" style="font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:16px">Тело уже говорит. Вы слышите?</h2>
-  <p class="reveal" style="color:var(--ink3);font-size:1.15rem;margin-bottom:36px;max-width:560px;margin-left:auto;margin-right:auto">30 сигналов. 7 систем. 60+ анализов. Красная зона.<br>Всё, чтобы перестать гадать — и начать действовать.</p>
-  <a href="https://payform.ru/4vb1Y5q/" class="cta-btn reveal">Получить книгу — 490 ₽</a>
-  <p class="reveal" style="font-size:.8rem;color:var(--ink4);margin-top:18px;font-family:'Manrope',sans-serif">PDF · Навсегда · Мгновенно</p>
+<!-- FINAL -->
+<section class="sec alt" style="text-align:center"><div class="w">
+  <h2 class="sec-title anim" style="text-align:center;margin:0 auto 16px">Тело уже говорит. Вы слышите?</h2>
+  <p class="anim" style="color:var(--ink3);font-size:1.1rem;margin-bottom:32px">30 сигналов · 7 систем · 60+ анализов · Красная зона</p>
+  <a href="https://payform.ru/4vb1Y5q/" class="cta-btn anim">Получить книгу — 490 ₽</a>
+  <p class="anim" style="font-size:.78rem;color:var(--ink4);margin-top:18px">PDF · Навсегда · Мгновенно</p>
 </div></section>
 
-<footer><div class="wide">
+<footer><div class="w">
   <p>© 2026 Архитектура Сознания</p>
   <p>ИП Ростовцева Дарья Валерьевна · ИНН: 241103415641</p>
   <p><a href="https://t.me/+aEgupwOOOq84YTNi">Telegram</a> · <a href="https://instagram.com/thebodymindcode">Instagram</a> · <a href="https://t.me/TheBodyMindCode_support">Поддержка</a></p>
-  <p style="margin-top:8px;font-size:.65rem;opacity:.5">Книга не является медицинской услугой и не заменяет консультацию врача.</p>
+  <p style="margin-top:8px;font-size:.62rem;opacity:.5">Книга не является медицинской услугой и не заменяет консультацию врача.</p>
 </div></footer>
 
 <script>
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('vis')})},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const i=q.parentElement,o=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')})});
+// Nav scroll
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
+
+// Scroll reveal
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.anim').forEach(el=>io.observe(el));
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const f=q.parentElement;
+    const open=f.classList.contains('open');
+    document.querySelectorAll('.faq').forEach(x=>x.classList.remove('open'));
+    if(!open)f.classList.add('open');
+  });
+});
 </script>
 </body>
 </html>
